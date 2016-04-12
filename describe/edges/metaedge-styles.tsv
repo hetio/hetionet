@@ -1,0 +1,45 @@
+metaedge	unicode_metaedge	standard_metaedge	abbreviation	standard_abbreviation	source	target	inverted
+Anatomy - downregulates - Gene	Anatomy–downregulates–Gene	Anatomy - downregulates - Gene	AdG	AdG	Anatomy	Gene	0
+Anatomy - expresses - Gene	Anatomy–expresses–Gene	Anatomy - expresses - Gene	AeG	AeG	Anatomy	Gene	0
+Anatomy - localizes - Disease	Anatomy–localizes–Disease	Disease - localizes - Anatomy	AlD	DlA	Anatomy	Disease	1
+Anatomy - upregulates - Gene	Anatomy–upregulates–Gene	Anatomy - upregulates - Gene	AuG	AuG	Anatomy	Gene	0
+Biological Process - participates - Gene	Biological Process–participates–Gene	Gene - participates - Biological Process	BPpG	GpBP	Biological Process	Gene	1
+Cellular Component - participates - Gene	Cellular Component–participates–Gene	Gene - participates - Cellular Component	CCpG	GpCC	Cellular Component	Gene	1
+Compound - binds - Gene	Compound–binds–Gene	Compound - binds - Gene	CbG	CbG	Compound	Gene	0
+Compound - causes - Side Effect	Compound–causes–Side Effect	Compound - causes - Side Effect	CcSE	CcSE	Compound	Side Effect	0
+Compound - downregulates - Gene	Compound–downregulates–Gene	Compound - downregulates - Gene	CdG	CdG	Compound	Gene	0
+Compound - includes - Pharmacologic Class	Compound–includes–Pharmacologic Class	Pharmacologic Class - includes - Compound	CiPC	PCiC	Compound	Pharmacologic Class	1
+Compound - palliates - Disease	Compound–palliates–Disease	Compound - palliates - Disease	CpD	CpD	Compound	Disease	0
+Compound - resembles - Compound	Compound–resembles–Compound	Compound - resembles - Compound	CrC	CrC	Compound	Compound	0
+Compound - treats - Disease	Compound–treats–Disease	Compound - treats - Disease	CtD	CtD	Compound	Disease	0
+Compound - upregulates - Gene	Compound–upregulates–Gene	Compound - upregulates - Gene	CuG	CuG	Compound	Gene	0
+Disease - associates - Gene	Disease–associates–Gene	Disease - associates - Gene	DaG	DaG	Disease	Gene	0
+Disease - downregulates - Gene	Disease–downregulates–Gene	Disease - downregulates - Gene	DdG	DdG	Disease	Gene	0
+Disease - localizes - Anatomy	Disease–localizes–Anatomy	Disease - localizes - Anatomy	DlA	DlA	Disease	Anatomy	0
+Disease - palliates - Compound	Disease–palliates–Compound	Compound - palliates - Disease	DpC	CpD	Disease	Compound	1
+Disease - presents - Symptom	Disease–presents–Symptom	Disease - presents - Symptom	DpS	DpS	Disease	Symptom	0
+Disease - resembles - Disease	Disease–resembles–Disease	Disease - resembles - Disease	DrD	DrD	Disease	Disease	0
+Disease - treats - Compound	Disease–treats–Compound	Compound - treats - Disease	DtC	CtD	Disease	Compound	1
+Disease - upregulates - Gene	Disease–upregulates–Gene	Disease - upregulates - Gene	DuG	DuG	Disease	Gene	0
+Gene - associates - Disease	Gene–associates–Disease	Disease - associates - Gene	GaD	DaG	Gene	Disease	1
+Gene - binds - Compound	Gene–binds–Compound	Compound - binds - Gene	GbC	CbG	Gene	Compound	1
+Gene - covaries - Gene	Gene–covaries–Gene	Gene - covaries - Gene	GcG	GcG	Gene	Gene	0
+Gene - downregulates - Anatomy	Gene–downregulates–Anatomy	Anatomy - downregulates - Gene	GdA	AdG	Gene	Anatomy	1
+Gene - downregulates - Compound	Gene–downregulates–Compound	Compound - downregulates - Gene	GdC	CdG	Gene	Compound	1
+Gene - downregulates - Disease	Gene–downregulates–Disease	Disease - downregulates - Gene	GdD	DdG	Gene	Disease	1
+Gene - expresses - Anatomy	Gene–expresses–Anatomy	Anatomy - expresses - Gene	GeA	AeG	Gene	Anatomy	1
+Gene - interacts - Gene	Gene–interacts–Gene	Gene - interacts - Gene	GiG	GiG	Gene	Gene	0
+Gene - participates - Biological Process	Gene–participates–Biological Process	Gene - participates - Biological Process	GpBP	GpBP	Gene	Biological Process	0
+Gene - participates - Cellular Component	Gene–participates–Cellular Component	Gene - participates - Cellular Component	GpCC	GpCC	Gene	Cellular Component	0
+Gene - participates - Molecular Function	Gene–participates–Molecular Function	Gene - participates - Molecular Function	GpMF	GpMF	Gene	Molecular Function	0
+Gene - participates - Pathway	Gene–participates–Pathway	Gene - participates - Pathway	GpPW	GpPW	Gene	Pathway	0
+Gene - upregulates - Anatomy	Gene–upregulates–Anatomy	Anatomy - upregulates - Gene	GuA	AuG	Gene	Anatomy	1
+Gene - upregulates - Compound	Gene–upregulates–Compound	Compound - upregulates - Gene	GuC	CuG	Gene	Compound	1
+Gene - upregulates - Disease	Gene–upregulates–Disease	Disease - upregulates - Gene	GuD	DuG	Gene	Disease	1
+Gene < regulates < Gene	Gene←regulates←Gene	Gene > regulates > Gene	G<rG	GrG	Gene	Gene	1
+Gene > regulates > Gene	Gene→regulates→Gene	Gene > regulates > Gene	Gr>G	GrG	Gene	Gene	0
+Molecular Function - participates - Gene	Molecular Function–participates–Gene	Gene - participates - Molecular Function	MFpG	GpMF	Molecular Function	Gene	1
+Pathway - participates - Gene	Pathway–participates–Gene	Gene - participates - Pathway	PWpG	GpPW	Pathway	Gene	1
+Pharmacologic Class - includes - Compound	Pharmacologic Class–includes–Compound	Pharmacologic Class - includes - Compound	PCiC	PCiC	Pharmacologic Class	Compound	0
+Side Effect - causes - Compound	Side Effect–causes–Compound	Compound - causes - Side Effect	SEcC	CcSE	Side Effect	Compound	1
+Symptom - presents - Disease	Symptom–presents–Disease	Disease - presents - Symptom	SpD	DpS	Symptom	Disease	1
