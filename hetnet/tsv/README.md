@@ -17,7 +17,7 @@ The tabular format requires two tables to represent a hetnet. It also does not i
 
 ## Edges
 
-`hetionet-v1.0-edges.sif` is a gzipped TSV table of network edges, formatted like:
+`hetionet-v1.0-edges.sif.gz` is a gzipped TSV table of network edges, formatted like:
 
 | source                  | metaedge | target                         |
 |-------------------------|----------|--------------------------------|
