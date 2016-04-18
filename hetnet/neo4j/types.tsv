@@ -1,0 +1,25 @@
+metaedge	rel_type	direction
+Anatomy - downregulates - Gene	DOWNREGULATES_AdG	both
+Anatomy - expresses - Gene	EXPRESSES_AeG	both
+Anatomy - upregulates - Gene	UPREGULATES_AuG	both
+Compound - binds - Gene	BINDS_CbG	both
+Compound - causes - Side Effect	CAUSES_CcSE	both
+Compound - downregulates - Gene	DOWNREGULATES_CdG	both
+Compound - palliates - Disease	PALLIATES_CpD	both
+Compound - resembles - Compound	RESEMBLES_CrC	both
+Compound - treats - Disease	TREATS_CtD	both
+Compound - upregulates - Gene	UPREGULATES_CuG	both
+Disease - associates - Gene	ASSOCIATES_DaG	both
+Disease - downregulates - Gene	DOWNREGULATES_DdG	both
+Disease - localizes - Anatomy	LOCALIZES_DlA	both
+Disease - presents - Symptom	PRESENTS_DpS	both
+Disease - resembles - Disease	RESEMBLES_DrD	both
+Disease - upregulates - Gene	UPREGULATES_DuG	both
+Gene - covaries - Gene	COVARIES_GcG	both
+Gene - interacts - Gene	INTERACTS_GiG	both
+Gene - participates - Biological Process	PARTICIPATES_GpBP	both
+Gene - participates - Cellular Component	PARTICIPATES_GpCC	both
+Gene - participates - Molecular Function	PARTICIPATES_GpMF	both
+Gene - participates - Pathway	PARTICIPATES_GpPW	both
+Gene > regulates > Gene	REGULATES_GrG	forward
+Pharmacologic Class - includes - Compound	INCLUDES_PCiC	both
