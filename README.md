@@ -22,6 +22,10 @@ We've created five permuted derivatives of Hetionet. The [permutation](http://do
 
 [`describe`](describe) contains summary statistics on the hetnet. See [`describe/nodes/metanodes.tsv`](describe/nodes/metanodes.tsv) for details on the node types in the hetnet. See [`describe/edges/metaedges.tsv`](describe/edges/metaedges.tsv) for details on the edge types.
 
+Below, we provide two hetnet visualizations. Panel A shows the metagraph (graph of types) for Hetionet. Panel B shows the actual hetnet with nodes laid out in circles by type. Color denotes edge type.
+
+![Hetionet v1.0 visualizations](https://github.com/dhimmel/rephetio/blob/103054a2bc3f86998fed6cb3753d1ecdb5cbe1e7/figure/hetionet-v1.0-metagraph-and-graph.png?raw=true "A) Metagraph B) Hetionet in circular metanode layout")
+
 ## License
 
 All original content in this repository is released as [CC0](https://creativecommons.org/publicdomain/zero/1.0/ "CC0 1.0 Universal · Public Domain Dedication"). However, the hetnet integrates data from many resources and users should consider the licensing of each source (see [this table](https://github.com/dhimmel/integrate/blob/d482033bcaa913a976faf4a6ee08497281c739c3/licenses/README.md "Source license table")). We apply a `license` attribute on a per node and per edge basis for sources with defined licenses. However, some resources don't provide any license, so for those we've requested permission. More information is [available on Thinklab](http://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107 "Integrating resources with disparate licensing into an open network").
