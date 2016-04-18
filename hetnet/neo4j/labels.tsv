@@ -1,0 +1,12 @@
+metanode	abbreviation	label
+Anatomy	A	Anatomy
+Biological Process	BP	BiologicalProcess
+Cellular Component	CC	CellularComponent
+Compound	C	Compound
+Disease	D	Disease
+Gene	G	Gene
+Molecular Function	MF	MolecularFunction
+Pathway	PW	Pathway
+Pharmacologic Class	PC	PharmacologicClass
+Side Effect	SE	SideEffect
+Symptom	S	Symptom

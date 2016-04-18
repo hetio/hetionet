@@ -2,6 +2,10 @@
 
 `hetionet-v1.0.db.tar.bz2` is a bzip2-compressed tarball of a Neo4j database. The database was build under Neo4j 2.3.3 Community Edition.
 
+## Nomenclature
+
+The Neo4j graph uses slightly different names for metanodes (Neo4j labels) and metaedges (Neo4j relationship types). See [`labels.tsv`](labels.tsv) for the node type mapping and [`types.tsv`](types.tsv) for the edge type mapping. We conform to the Neo4j style of CamelCase labels and ALL_CAPS relationship types. In addition, Neo4j relationship types are appended with metaedge standard abbreviations. This adds source/target metanode awareness to relationship types and [enables](https://thinklab.com/discussion/using-the-neo4j-graph-database-for-hetnets/112#6 "Query Optimization · Using the neo4j graph database for hetnets · Thinklab Discussion in Project Rephetio") optimized queries.
+
 ## Neo4j setup instructions
 
 Download and extract Neo4j 2.3 Community Edition [from Neo4j](http://neo4j.com/download/other-releases/ "Neo4j Releases"). Navigate to the `data` directory inside the Neo4j directory and run:
