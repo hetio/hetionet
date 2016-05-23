@@ -16,7 +16,7 @@ The JSON and Neo4j formats contain node and edge properties, which are missing f
 
 ### Permuted Hetnets
 
-We've created five permuted derivatives of Hetionet. The [permutation](http://doi.org/10.15363/thinklab.d136 "Permuting hetnets and implementing randomized edge swaps in cypher · Thinklab discussion") randomizes edges while preserving node degree. Permuted hetnets are available in [`hetnet/permuted`](hetnet/permuted) in JSON and Neo4j formats. Relationship properties are omitted from the permuted hetnets.
+We've created five permuted derivatives of Hetionet. The [permutation](http://doi.org/10.15363/thinklab.d136 "Permuting hetnets and implementing randomized edge swaps in cypher · Thinklab discussion") randomizes edges while preserving node degree. Permuted hetnets are available in [`hetnet/permuted`](hetnet/permuted) in JSON and Neo4j 2.3 formats. Relationship properties are omitted from the permuted hetnets.
 
 ## Network Description
 
