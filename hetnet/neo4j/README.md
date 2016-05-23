@@ -11,7 +11,7 @@ The Neo4j graph uses slightly different names for metanodes (Neo4j labels) and m
 Download and extract Neo4j 2.3 Community Edition [from Neo4j](http://neo4j.com/download/other-releases/ "Neo4j Releases"). Navigate to the `data` directory inside the Neo4j directory and run:
 
 ```sh
-curl --location --insecure https://github.com/dhimmel/hetionet/raw/master/hetnet/neo4j/hetionet-v1.0.db.tar.bz2 | tar --extract --bzip2
+curl --location https://github.com/dhimmel/hetionet/raw/master/hetnet/neo4j/hetionet-v1.0.db.tar.bz2 | tar --extract --bzip2
 ```
 
 If curl throws an error related to SSL or certificates, you can add the `--insecure` argument to allow connections to SSL sites without certs:
