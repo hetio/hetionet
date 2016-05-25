@@ -1,0 +1,95 @@
+node {
+  diameter: 50px;
+  color: #A5ABB6;
+  border-color: #9AA1AC;
+  border-width: 1px;
+  text-color-internal: #FFFFFF;
+  font-size: 10px;
+}
+
+relationship {
+  color: #A5ABB6;
+  shaft-width: 1.5px;
+  font-size: 8px;
+  padding: 3px;
+  text-color-external: #000000;
+  text-color-internal: #FFFFFF;
+  caption: '<type>';
+}
+
+node.Gene {
+  color: #0096FF;
+  border-color: #FFFFFF;
+  text-color-internal: #FFFFFF;
+  caption: '{name}';
+}
+
+node.Pathway {
+  color: #FF9300;
+  border-color: #FFFFFF;
+  text-color-internal: #000000;
+  caption: '{name}';
+}
+
+node.Anatomy {
+  color: #008F00;
+  border-color: #FFFFFF;
+  text-color-internal: #FFFFFF;
+  caption: '{name}';
+}
+
+node.Disease {
+  color: #8E4F00;
+  border-color: #FFFFFF;
+  text-color-internal: #FFFFFF;
+  caption: '{name}';
+}
+
+node.Compound {
+  color: #FF2600;
+  border-color: #FFFFFF;
+  text-color-internal: #FFFFFF;
+  caption: '{name}';
+}
+
+node.CellularComponent {
+  color: #FF9300;
+  border-color: #FFFFFF;
+  text-color-internal: #000000;
+  caption: '{name}';
+}
+
+node.BiologicalProcess {
+  color: #FF9300;
+  border-color: #FFFFFF;
+  text-color-internal: #000000;
+  caption: '{name}';
+}
+
+node.SideEffect {
+  color: #FFFB00;
+  border-color: #FFFFFF;
+  text-color-internal: #000000;
+  caption: '{name}';
+}
+
+node.Symptom {
+  color: #A5ABB6;
+  border-color: #FFFFFF;
+  text-color-internal: #FFFFFF;
+  caption: '{name}';
+}
+
+node.PharmacologicClass {
+  color: #FF85FF;
+  border-color: #FFFFFF;
+  text-color-internal: #FFFFFF;
+  caption: '{name}';
+}
+
+node.MolecularFunction {
+  color: #FF9300;
+  border-color: #FFFFFF;
+  text-color-internal: #000000;
+  caption: '{name}';
+}
