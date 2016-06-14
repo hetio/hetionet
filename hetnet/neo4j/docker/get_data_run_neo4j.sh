@@ -1,3 +1,3 @@
 #!/bin/sh
-/extract_db.sh
+sh /get_data.sh
 /docker-entrypoint.sh neo4j

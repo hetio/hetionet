@@ -1,0 +1,47 @@
+:author: Daniel Himmelstein
+:twitter: dhimmel
+:tags: Hetionet, hetnet, disease
+:neo4j-version: 3.0
+
+== Hetionet in Neo4j
+
+=== Hetionet v1.0
+
+Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.
+
+We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:https://thinklab.com/p/rephetio[Project Rephetio] — where we systematically looked at why drugs work and predicted new uses for existing drugs.
+
+=== Neo4j
+
+Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You're currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can't modify the network. However, you can run query and and explore the network. See the next slide for an example query.
+
+=== Metagraph
+
+The metagraph shows the data model (schema) for Hetionet v1.0.
+
+image::https://github.com/dhimmel/rephetio/raw/8881d5d45bff2ca9ea6cadca43ace6c5e8022ea9/figure/metagraph.png[float=right]
+
+== Random relationships
+
+The following query retrieves a random relationship of each type. The query goes through every relationship and thus may take several seconds.
+
+//setup
+[source,cypher]
+----
+MATCH ()-[r]->()
+WITH type(r) AS rel_type, collect(r) AS rels
+WITH rel_type, rels, toInt(rand() * size(rels)) AS idx
+RETURN rel_type, rels[idx] AS example
+----
+
+Note that by default, the Neo4j Browser draws all relationships between retrieved nodes. Toggle `AUTO-COMPLETE` to `OFF` (located in the bottom right of a frame) to _only_ display queried relationships.
+
+== Style
+
+Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match metagraph from earlier in this guide. This command only needs to be run once per web browser.
+
+//setup
+[source]
+----
+:style http://localhost:7474/guides/graphstyle.grass
+----

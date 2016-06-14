@@ -1,0 +1,128 @@
+<style type="text/css" media="screen">
+/*
+.nodes-image {
+	margin:-100;
+}
+*/
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+.imageblock .content img {max-width: 900px;max-height: 300px;}
+.deck h3, .deck h4 {display: block !important;margin-bottom:8px;margin-top:5px;}
+.listingblock {margin:8px;}
+.pull-bottom {position:relative;bottom:1em;}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+</style>
+<style type="text/css" media="screen">
+#editor.maximize-editor .CodeMirror-code { font-size:24px; line-height:26px; }
+</style>
+<article class="guide" ng-controller="AdLibDataController">
+  <carousel class="deck container-fluid">
+    <!--slide class="row-fluid">
+      <div class="col-sm-3">
+        <h3>Hetionet in Neo4j</h3>
+        <p class="lead">Information</p>
+			<!dl>
+
+
+				<dt>author"</dt><dd>Daniel Himmelstein</dd>
+
+
+			</dl>
+		</div>
+      <div class="col-sm-9">
+        <figure>
+          <img style="width:300px" src=""/>
+        </figure>
+      </div>
+    </slide-->
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Hetionet in Neo4j</h3>
+    <br/>
+    <div>
+
+
+
+   <h4>Hetionet v1.0</h4>
+   <div class="paragraph">
+<p>Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.</p>
+</div>
+<div class="paragraph">
+<p>We created <a href="https://github.com/dhimmel/hetionet">Hetionet</a> v1.0 for <a href="https://thinklab.com/p/rephetio">Project Rephetio</a> — where we systematically looked at why drugs work and predicted new uses for existing drugs.</p>
+</div>
+
+
+
+   <h4>Neo4j</h4>
+   <div class="paragraph">
+<p>Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You&#8217;re currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can&#8217;t modify the network. However, you can run query and and explore the network. See the next slide for an example query.</p>
+</div>
+
+
+
+   <h4>Metagraph</h4>
+   <div class="paragraph">
+<p>The metagraph shows the data model (schema) for Hetionet v1.0.</p>
+</div>
+<div class="imageblock" style="float: right">
+<div class="content">
+<img src="https://github.com/dhimmel/rephetio/raw/8881d5d45bff2ca9ea6cadca43ace6c5e8022ea9/figure/metagraph.png" alt="metagraph">
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Random relationships</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>The following query retrieves a random relationship of each type. The query goes through every relationship and thus may take several seconds.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH ()-[r]-&gt;()
+WITH type(r) AS rel_type, collect(r) AS rels
+WITH rel_type, rels, toInt(rand() * size(rels)) AS idx
+RETURN rel_type, rels[idx] AS example<!--/code--></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that by default, the Neo4j Browser draws all relationships between retrieved nodes. Toggle <code>AUTO-COMPLETE</code> to <code>OFF</code> (located in the bottom right of a frame) to <em>only</em> display queried relationships.</p>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Style</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match metagraph from earlier in this guide. This command only needs to be run once per web browser.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding"><!--code-->:style http://localhost:7474/guides/graphstyle.grass<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+  </carousel>
+</article>
