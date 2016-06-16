@@ -16,7 +16,8 @@ docker run --publish=7474:7474 --volume=$HOME/neo4j/hetionet-data:/data $TAG
 For deployment (maps port 7474 to port 80):
 
 ```sh
-#docker run --detach --publish=80:7474 --volume=$/neo4j-data-volume:/data $TAG
+docker pull $TAG
+docker run --publish=80:7474 --volume=$HOME/hetionet-data:/data $TAG
 ```
 
 ## On docker hub

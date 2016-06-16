@@ -38,10 +38,10 @@ Note that by default, the Neo4j Browser draws all relationships between retrieve
 
 == Style
 
-Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match metagraph from earlier in this guide. This command only needs to be run once per web browser.
+Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from earlier in this guide. This command only needs to be run once per web browser.
 
 //setup
 [source]
 ----
-:style http://localhost:7474/guides/graphstyle.grass
+:style http://neo4j.het.io/guides/graphstyle.grass
 ----
