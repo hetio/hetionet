@@ -48,7 +48,8 @@
     <h3>Hetionet in Neo4j</h3>
     <br/>
     <div>
-      
+      <div class="col-lg-3 ng-scope">
+
 
 
    <h4>Hetionet v1.0</h4>
@@ -58,6 +59,8 @@
 <div class="paragraph">
 <p>We created <a href="https://github.com/dhimmel/hetionet">Hetionet</a> v1.0 for <a href="https://thinklab.com/p/rephetio">Project Rephetio</a> — where we systematically looked at why drugs work and predicted new uses for existing drugs.</p>
 </div>
+</div>
+<div class="col-lg-3 ng-scope">
 
 
 
@@ -65,6 +68,8 @@
    <div class="paragraph">
 <p>Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You&#8217;re currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can&#8217;t modify the network. However, you can run query and and explore the network. See the next slide for an example query.</p>
 </div>
+</div>
+<div class="col-lg-6 ng-scope">
 
 
 
@@ -72,10 +77,8 @@
    <div class="paragraph">
 <p>The metagraph shows the data model (schema) for Hetionet v1.0.</p>
 </div>
-<div class="imageblock" style="float: right">
-<div class="content">
-<img src="https://github.com/dhimmel/rephetio/raw/8881d5d45bff2ca9ea6cadca43ace6c5e8022ea9/figure/metagraph.png" alt="metagraph">
-</div>
+<img src="https://github.com/dhimmel/rephetio/raw/b7b0fad270add06946bf9c27d46f7a8762ec1c98/figure/metagraph.png" title="Hetionet v1.0 Metagraph" class="img-responsive">
+
 </div>
 	</div>
   </div>
@@ -85,10 +88,54 @@
 
 <slide class="row-fluid">
   <div class="col-sm-12">
-    <h3>Random relationships</h3>
+    <h3>Explore Hetionet</h3>
     <br/>
     <div>
-      <div class="paragraph">
+      <div class="col-lg-3 ng-scope">
+
+
+
+   <h4>Label counts</h4>
+   <div class="paragraph">
+<p>In Neo4j, node types are called labels. The following query counts the number of nodes per label. Run it by clicking the text box to prefill the command and then hitting <a tooltip-placement="left" class="circled play sl sl-play"></a> in the upper right.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (node)
+RETURN
+  head(labels(node)) AS label,
+  count(*) AS count
+ORDER BY count DESC<!--/code--></pre>
+</div>
+</div>
+</div>
+<div class="col-lg-3 ng-scope">
+
+
+
+   <h4>Relationship type counts</h4>
+   <div class="paragraph">
+<p>Play the following query to count the number of relationships per type.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH ()-[rel]-&gt;()
+RETURN
+  type(rel) AS rel_type,
+  count(*) AS count
+ORDER BY count DESC<!--/code--></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice the suffixes (e.g. <code>GpPW</code> in <code>PARTICIPATES_GpPW</code>) which we include to ensure that relationship types between different labels are distinct.</p>
+</div>
+</div>
+<div class="col-lg-6 ng-scope">
+
+
+
+   <h4>Random relationships</h4>
+   <div class="paragraph">
 <p>The following query retrieves a random relationship of each type. The query goes through every relationship and thus may take several seconds.</p>
 </div>
 <div class="listingblock">
@@ -102,6 +149,29 @@ RETURN rel_type, rels[idx] AS example<!--/code--></pre>
 <div class="paragraph">
 <p>Note that by default, the Neo4j Browser draws all relationships between retrieved nodes. Toggle <code>AUTO-COMPLETE</code> to <code>OFF</code> (located in the bottom right of a frame) to <em>only</em> display queried relationships.</p>
 </div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Project Rephetio</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>Project Rephetio uses Hetionet to predict the probability that each compound treats each disease. The approach uses hetnet edge prediction — an algorithm that learns which types of paths occur more frequently between known treatments. Use the <a href="http://het.io/repurpose/" title="Project Rephetio Prediction Browser on het.io">Prediction Browser</a> to browse the predicted probabilities of treatment for 209,168 compound–disease pairs.</p>
+</div>
+<div class="paragraph">
+<p>Each prediction has a corresponding Neo4j guide, which provides additional details and visualization. For example, play the following command to see the evidence for clofarabine treating multiple sclerosis.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:play http://neo4j.het.io/guides/rep/DB00631/DOID_2377.html<!--/code--></pre>
+</div>
+</div>
 	</div>
   </div>
 </slide>
@@ -114,7 +184,7 @@ RETURN rel_type, rels[idx] AS example<!--/code--></pre>
     <br/>
     <div>
       <div class="paragraph">
-<p>Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match metagraph from earlier in this guide. This command only needs to be run once per web browser.</p>
+<p>Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from the first slide in this guide. This command only needs to be run once per web browser.</p>
 </div>
 <div class="listingblock">
 <div class="content">
