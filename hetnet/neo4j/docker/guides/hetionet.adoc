@@ -2,30 +2,95 @@
 :twitter: dhimmel
 :tags: Hetionet, hetnet, disease
 :neo4j-version: 3.0
+:linkattrs:
 
 == Hetionet in Neo4j
 
+++++
+<div class="col-lg-3 ng-scope">
+++++
 === Hetionet v1.0
 
 Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.
 
 We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:https://thinklab.com/p/rephetio[Project Rephetio] — where we systematically looked at why drugs work and predicted new uses for existing drugs.
+++++
+</div>
+++++
 
+++++
+<div class="col-lg-3 ng-scope">
+++++
 === Neo4j
 
 Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You're currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can't modify the network. However, you can run query and and explore the network. See the next slide for an example query.
+++++
+</div>
+++++
 
+++++
+<div class="col-lg-6 ng-scope">
+++++
 === Metagraph
 
 The metagraph shows the data model (schema) for Hetionet v1.0.
 
-image::https://github.com/dhimmel/rephetio/raw/8881d5d45bff2ca9ea6cadca43ace6c5e8022ea9/figure/metagraph.png[float=right]
+++++
+<img src="https://github.com/dhimmel/rephetio/raw/b7b0fad270add06946bf9c27d46f7a8762ec1c98/figure/metagraph.png" title="Hetionet v1.0 Metagraph" class="img-responsive">
 
-== Random relationships
+</div>
+++++
+
+== Explore Hetionet
+
+++++
+<div class="col-lg-3 ng-scope">
+++++
+
+=== Label counts
+
+In Neo4j, node types are called labels. The following query counts the number of nodes per label. Run it by clicking the text box to prefill the command and then hitting +++<a tooltip-placement="left" class="circled play sl sl-play"></a>+++ in the upper right.
+
+[source,cypher]
+----
+MATCH (node)
+RETURN
+  head(labels(node)) AS label,
+  count(*) AS count
+ORDER BY count DESC
+----
+++++
+</div>
+<div class="col-lg-3 ng-scope">
+++++
+
+=== Relationship type counts
+
+Play the following query to count the number of relationships per type.
+
+[source,cypher]
+----
+MATCH ()-[rel]->()
+RETURN
+  type(rel) AS rel_type,
+  count(*) AS count
+ORDER BY count DESC
+----
+
+Notice the suffixes (e.g. `GpPW` in `PARTICIPATES_GpPW`) which we include to ensure that relationship types between different labels are distinct.
+
+++++
+</div>
+++++
+
+++++
+<div class="col-lg-6 ng-scope">
+++++
+
+=== Random relationships
 
 The following query retrieves a random relationship of each type. The query goes through every relationship and thus may take several seconds.
 
-//setup
 [source,cypher]
 ----
 MATCH ()-[r]->()
@@ -36,11 +101,25 @@ RETURN rel_type, rels[idx] AS example
 
 Note that by default, the Neo4j Browser draws all relationships between retrieved nodes. Toggle `AUTO-COMPLETE` to `OFF` (located in the bottom right of a frame) to _only_ display queried relationships.
 
+++++
+</div>
+++++
+
+== Project Rephetio
+
+Project Rephetio uses Hetionet to predict the probability that each compound treats each disease. The approach uses hetnet edge prediction — an algorithm that learns which types of paths occur more frequently between known treatments. Use the link:http://het.io/repurpose/[Prediction Browser, title="Project Rephetio Prediction Browser on het.io"] to browse the predicted probabilities of treatment for 209,168 compound–disease pairs.
+
+Each prediction has a corresponding Neo4j guide, which provides additional details and visualization. For example, play the following command to see the evidence for clofarabine treating multiple sclerosis.
+
+[source,cypher]
+----
+:play http://neo4j.het.io/guides/rep/DB00631/DOID_2377.html
+----
+
 == Style
 
-Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from earlier in this guide. This command only needs to be run once per web browser.
+Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from the first slide in this guide. This command only needs to be run once per web browser.
 
-//setup
 [source]
 ----
 :style http://neo4j.het.io/guides/graphstyle.grass
