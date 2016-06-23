@@ -23,7 +23,12 @@ We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:http
 ++++
 === Neo4j
 
-Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You're currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can't modify the network. However, you can run query and and explore the network. See the next slide for an example query.
+Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You're currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can't modify the network. However, you can run queries and and explore the network. If you are new to Neo4j, check out the following guides:
+
+ * +++<a play-topic="concepts">Concepts</a>+++
+ * +++<a play-topic="cypher">Cypher</a>+++
+ * +++<a play-topic="intro">Browser Intro</a>+++
+
 ++++
 </div>
 ++++
@@ -113,7 +118,7 @@ Each prediction has a corresponding Neo4j guide, which provides additional detai
 
 [source,cypher]
 ----
-:play http://neo4j.het.io/guides/rep/DB00631/DOID_2377.html
+:play https://neo4j.het.io/guides/rep/DB00631/DOID_2377.html
 ----
 
 == Style
@@ -122,5 +127,5 @@ Execute this command to load the hetionet style. Once the style is loaded, the n
 
 [source]
 ----
-:style http://neo4j.het.io/guides/graphstyle.grass
+:style https://neo4j.het.io/guides/graphstyle.grass
 ----
