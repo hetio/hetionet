@@ -14,6 +14,7 @@
 Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.
 
 We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:https://thinklab.com/p/rephetio[Project Rephetio] — where we systematically looked at why drugs work and predicted new uses for existing drugs.
+
 ++++
 </div>
 ++++
@@ -21,6 +22,7 @@ We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:http
 ++++
 <div class="col-lg-3 ng-scope">
 ++++
+
 === Neo4j
 
 Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You're currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can't modify the network. However, you can run queries and and explore the network. If you are new to Neo4j, check out the following guides:
@@ -31,9 +33,6 @@ Neo4j is a database designed for hetnets (graphs with multiple node or relations
 
 ++++
 </div>
-++++
-
-++++
 <div class="col-lg-6 ng-scope">
 ++++
 === Metagraph
@@ -86,9 +85,6 @@ Notice the suffixes (e.g. `GpPW` in `PARTICIPATES_GpPW`) which we include to ens
 
 ++++
 </div>
-++++
-
-++++
 <div class="col-lg-6 ng-scope">
 ++++
 
@@ -124,8 +120,47 @@ Each prediction has a corresponding Neo4j guide, which provides additional detai
 == Style
 
 Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from the first slide in this guide. This command only needs to be run once per web browser.
++++<img src="https://piwik.dhimmel.com/piwik.php?idsite=7&rec=1" style="border:0" alt="" />+++
 
 [source]
 ----
 :style https://neo4j.het.io/guides/graphstyle.grass
 ----
+
+== Querying Hetionet from Python
+
+We allow users to programmatically query Hetionet. Our Neo4j instance supports HTTP(S) and Bolt connections. The code below shows how to query Hetionet from Python using the official `neo4j` driver and the `py2neo` community driver.
+
+[source,python]
+----
+# We use Pandas DataFrames to store tabular query results
+# However, this is an optional step for downstream convenience
+import pandas
+
+# Return 5 arbitrary diseases
+query = '''
+MATCH (disease:Disease)
+RETURN
+  disease.identifier as identifier,
+  disease.name AS name
+LIMIT 5
+'''
+
+# Uses the official neo4j-python-driver. See https://github.com/neo4j/neo4j-python-driver
+from neo4j.v1 import GraphDatabase
+driver = GraphDatabase.driver("bolt://neo4j.het.io")
+with driver.session() as session:
+    result = session.run(query)
+    result_df = pandas.DataFrame((x.values() for x in result), columns=result.keys())
+
+# Uses py2neo. See http://py2neo.org/v3/
+import py2neo
+graph = py2neo.Graph("bolt://neo4j.het.io", bolt=True, secure=True,
+    http_port=80, https_port=443, bolt_port=7687)
+cursor = graph.run(query)
+result_df = pandas.DataFrame.from_records(cursor, columns=cursor.keys())
+----
+
+In addition to Python, Noe4j has driver support for link:https://neo4j.com/developer/language-guides/[many other languages].
+
+We currently limit queries to 120 seconds. If you notice that the Neo4j server is overloaded, please hold off automated queries. If you are doing a substantial amount of querying, please run the database locally (see the link:https://hub.docker.com/r/dhimmel/hetionet/[Hetionet Docker]).
