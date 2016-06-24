@@ -197,12 +197,63 @@ RETURN rel_type, rels[idx] AS example<!--/code--></pre>
     <br/>
     <div>
       <div class="paragraph">
-<p>Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from the first slide in this guide. This command only needs to be run once per web browser.</p>
+<p>Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from the first slide in this guide. This command only needs to be run once per web browser.
+<img src="https://piwik.dhimmel.com/piwik.php?idsite=7&rec=1" style="border:0" alt="" /></p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding"><!--code-->:style https://neo4j.het.io/guides/graphstyle.grass<!--/code--></pre>
 </div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Querying Hetionet from Python</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>We allow users to programmatically query Hetionet. Our Neo4j instance supports HTTP(S) and Bolt connections. The code below shows how to query Hetionet from Python using the official <code>neo4j</code> driver and the <code>py2neo</code> community driver.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="python" lang="python"><!--code class="python language-python"--># We use Pandas DataFrames to store tabular query results
+# However, this is an optional step for downstream convenience
+import pandas
+
+# Return 5 arbitrary diseases
+query = '''
+MATCH (disease:Disease)
+RETURN
+  disease.identifier as identifier,
+  disease.name AS name
+LIMIT 5
+'''
+
+# Uses the official neo4j-python-driver. See https://github.com/neo4j/neo4j-python-driver
+from neo4j.v1 import GraphDatabase
+driver = GraphDatabase.driver("bolt://neo4j.het.io")
+with driver.session() as session:
+    result = session.run(query)
+    result_df = pandas.DataFrame((x.values() for x in result), columns=result.keys())
+
+# Uses py2neo. See http://py2neo.org/v3/
+import py2neo
+graph = py2neo.Graph("bolt://neo4j.het.io", bolt=True, secure=True,
+    http_port=80, https_port=443, bolt_port=7687)
+cursor = graph.run(query)
+result_df = pandas.DataFrame.from_records(cursor, columns=cursor.keys())<!--/code--></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition to Python, Noe4j has driver support for <a href="https://neo4j.com/developer/language-guides/">many other languages</a>.</p>
+</div>
+<div class="paragraph">
+<p>We currently limit queries to 120 seconds. If you notice that the Neo4j server is overloaded, please hold off automated queries. If you are doing a substantial amount of querying, please run the database locally (see the <a href="https://hub.docker.com/r/dhimmel/hetionet/">Hetionet Docker</a>).</p>
 </div>
 	</div>
   </div>
