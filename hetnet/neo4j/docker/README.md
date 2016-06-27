@@ -13,6 +13,10 @@ For development (maps port 7474 to port 7474):
 docker run --publish=7474:7474 --publish=7687:7687 --volume=$HOME/neo4j/hetionet-data:/data dhimmel/hetionet
 ```
 
+## Deploying the docker
+
+Push to docker hub using `docker push dhimmel/hetionet`.
+
 For deployment (maps port 7474 to port 80):
 
 ```sh
