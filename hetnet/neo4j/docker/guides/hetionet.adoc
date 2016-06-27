@@ -120,7 +120,6 @@ Each prediction has a corresponding Neo4j guide, which provides additional detai
 == Style
 
 Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from the first slide in this guide. This command only needs to be run once per web browser.
-+++<img src="https://piwik.dhimmel.com/piwik.php?idsite=7&rec=1" style="border:0" alt="" />+++
 
 [source]
 ----
