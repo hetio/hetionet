@@ -10,7 +10,7 @@ docker build --tag dhimmel/hetionet:latest --tag $TAG --file Dockerfile .
 For development (maps port 7474 to port 7474):
 
 ```sh
-docker run --publish=7474:7474 --publish=7687:7687 --volume=$HOME/neo4j/hetionet-data:/data dhimmel/hetionet
+docker run --publish=7474:7474 --publish=7687:7687 --volume=$HOME/neo4j/hetionet-data:/data --volume=$HOME/neo4j/hetionet-logs:/var/lib/neo4j/logs dhimmel/hetionet
 ```
 
 ## Deploying the docker
@@ -21,7 +21,7 @@ For deployment (maps port 7474 to port 80):
 
 ```sh
 docker pull dhimmel/hetionet
-docker run --publish=80:7474 --publish=443:7473 --publish=7687:7687 --volume=$HOME/hetionet-data:/data --volume=$HOME/ssl:/var/lib/neo4j/certificates dhimmel/hetionet
+docker run --publish=80:7474 --publish=443:7473 --publish=7687:7687 --volume=$HOME/hetionet-data:/data --volume=$HOME/neo4j-logs:/var/lib/neo4j/logs --volume=$HOME/ssl:/var/lib/neo4j/certificates dhimmel/hetionet
 ```
 
 ## On docker hub
