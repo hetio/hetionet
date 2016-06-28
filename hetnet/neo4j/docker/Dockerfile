@@ -9,14 +9,17 @@ COPY files/piwik.html /
 COPY files/neo4j-guide-extension-3.0.1.jar /var/lib/neo4j/plugins
 COPY guides /guides
 
-# Add Piwik Analytics to the Neo4j Browser
+# Update the Neo4j Browser source to improve search results and add Piwik Analytics
 RUN apt-get update -qq && \
   apt-get install -qq --yes --no-install-recommends zip && \
   cd /var/lib/neo4j/lib && \
   JAR_PATH=`ls neo4j-browser-*` && \
   HTML_PATH=browser/index.html && \
   unzip $JAR_PATH $HTML_PATH && \
-  sed -i -e '/<\/head>/r /piwik.html' -e 'x;$G' $HTML_PATH && \
+  OLD='<meta name="description" content="Neo4j Browser">' && \
+  NEW='<meta name="description" content="Hetionet Browser. Use Noe4j to query and explore a network of biomedical knowledge.">' && \
+  sed --in-place "s|$OLD|$NEW|" $HTML_PATH && \
+  sed --in-place --expression='/<\/head>/r /piwik.html' --expression='x;$G' $HTML_PATH && \
   zip $JAR_PATH $HTML_PATH && \
   rm -r browser /piwik.html
 
