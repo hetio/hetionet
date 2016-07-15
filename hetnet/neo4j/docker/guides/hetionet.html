@@ -90,7 +90,7 @@
    <div class="paragraph">
 <p>The metagraph shows the data model (schema) for Hetionet v1.0.</p>
 </div>
-<img src="https://github.com/dhimmel/rephetio/raw/b7b0fad270add06946bf9c27d46f7a8762ec1c98/figure/metagraph.png" title="Hetionet v1.0 Metagraph" class="img-responsive">
+<img src="https://github.com/dhimmel/rephetio/raw/5f834b14b94b9b9d2082c5ae0303b57d634c3a40/figure/metagraph-cypher.png" title="Hetionet v1.0 Metagraph for Cypher" class="img-responsive">
 
 </div>
 	</div>
@@ -184,6 +184,87 @@ RETURN rel_type, rels[idx] AS example<!--/code--></pre>
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:play https://neo4j.het.io/guides/rep/DB00631/DOID_2377.html<!--/code--></pre>
 </div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Learn how to query Hetionet using Cypher</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>Here are some simple queries to help new users get acquainted with Cypher and Hetionet.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Retrieve the Disease node named lung cancer:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (node:Disease {name: "lung cancer"}) RETURN node<!--/code--></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Which is equivalent to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (node:Disease)
+WHERE node.name = "lung cancer"
+RETURN node<!--/code--></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Find the anatomies (tissue types) where lung cancer localizes:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (:Disease {name: 'lung cancer'})-[rel:LOCALIZES_DlA]-&gt;()
+RETURN rel<!--/code--></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Find all genes associated with spinal cancer:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (:Disease {name: 'spinal cancer'})-[r:ASSOCIATES_DaG]-&gt;()
+RETURN r<!--/code--></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Find all genes associated with both liver and kidney cancer:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path=(:Disease {name: 'liver cancer'})-[:ASSOCIATES_DaG]-(:Gene)-[:ASSOCIATES_DaG]-(:Disease {name: 'kidney cancer'})
+RETURN path<!--/code--></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Find all genes that participate in the mitotic spindle checkpoint biological process:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH ({name: 'mitotic spindle checkpoint'})-[rel:PARTICIPATES_GpBP]-()
+RETURN rel<!--/code--></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Find all genes that participate in the mitotic spindle checkpoint and are expressed in the lung:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path=(:BiologicalProcess {name: 'mitotic spindle checkpoint'})-[:PARTICIPATES_GpBP]-(gene:Gene)-[:EXPRESSES_AeG]-(:Anatomy {name: 'lung'})
+RETURN path<!--/code--></pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 	</div>
   </div>
