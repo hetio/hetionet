@@ -16,6 +16,9 @@ RUN apt-get update -qq && \
   JAR_PATH=`ls neo4j-browser-*` && \
   HTML_PATH=browser/index.html && \
   unzip $JAR_PATH $HTML_PATH && \
+  OLD='<title ng-bind-template="Neo4j " class="ng-binding">Neo4j </title>' && \
+  NEW='<title>Hetionet · Neo4j Browser</title>' && \
+  sed --in-place "s|$OLD|$NEW|" $HTML_PATH && \
   OLD='<meta name="description" content="Neo4j Browser">' && \
   NEW='<meta name="description" content="Hetionet Browser. Use Noe4j to query and explore a network of biomedical knowledge.">' && \
   sed --in-place "s|$OLD|$NEW|" $HTML_PATH && \
@@ -24,8 +27,6 @@ RUN apt-get update -qq && \
   rm -r browser /piwik.html
 
 ENV NEO4J_AUTH none
-ENV NEO4J_dbms_memory_pagecache_size 512M
-ENV NEO4J_dbms_memory_heap_maxSize 1024
 
 WORKDIR /var/lib/neo4j
 
