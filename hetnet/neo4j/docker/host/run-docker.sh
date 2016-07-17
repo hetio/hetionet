@@ -1,6 +1,7 @@
 # Start dhimmel/hetionet container
 # See https://neo4j.com/developer/docker-3.x/ for doc
 docker run \
+  --detach \
   --publish=80:7474 \
   --publish=443:7473 \
   --publish=7687:7687 \
