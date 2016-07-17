@@ -20,7 +20,7 @@ RUN apt-get update -qq && \
   NEW='<title>Hetionet · Neo4j Browser</title>' && \
   sed --in-place "s|$OLD|$NEW|" $HTML_PATH && \
   OLD='<meta name="description" content="Neo4j Browser">' && \
-  NEW='<meta name="description" content="Hetionet Browser. Use Noe4j to query and explore a network of biomedical knowledge.">' && \
+  NEW='<meta name="description" content="Hetionet Browser. Use Neo4j to query and explore a network of biomedical knowledge.">' && \
   sed --in-place "s|$OLD|$NEW|" $HTML_PATH && \
   sed --in-place --expression='/<\/head>/r /piwik.html' --expression='x;$G' $HTML_PATH && \
   zip $JAR_PATH $HTML_PATH && \

@@ -220,6 +220,6 @@ cursor = graph.run(query)
 result_df = pandas.DataFrame.from_records(cursor, columns=cursor.keys())
 ----
 
-In addition to Python, Noe4j has driver support for link:https://neo4j.com/developer/language-guides/[many other languages].
+In addition to Python, Neo4j has driver support for link:https://neo4j.com/developer/language-guides/[many other languages].
 
 We currently limit queries to 120 seconds. If you notice that the Neo4j server is overloaded, please hold off automated queries. If you are doing a substantial amount of querying, please run the database locally (see the link:https://hub.docker.com/r/dhimmel/hetionet/[Hetionet Docker]).
