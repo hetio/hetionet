@@ -16,7 +16,7 @@ RUN apt-get update -qq && \
   JAR_PATH=`ls neo4j-browser-*` && \
   HTML_PATH=browser/index.html && \
   unzip $JAR_PATH $HTML_PATH && \
-  OLD='<title ng-bind-template="Neo4j " class="ng-binding">Neo4j </title>' && \
+  OLD='<title ng-bind-template="Neo4j {{kernel\.store_dir}}">Neo4j</title>' && \
   NEW='<title>Hetionet · Neo4j Browser</title>' && \
   sed --in-place "s|$OLD|$NEW|" $HTML_PATH && \
   OLD='<meta name="description" content="Neo4j Browser">' && \
