@@ -9,6 +9,10 @@ COPY files/piwik.html /
 COPY files/neo4j-guide-extension-3.0.1.jar /var/lib/neo4j/plugins
 COPY guides /guides
 
+# Install Neo4j APOC plugin
+RUN wget --quiet --directory-prefix=/var/lib/neo4j/plugins \
+  https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/1.1.0/apoc-1.1.0.jar
+
 # Update the Neo4j Browser source to improve search results and add Piwik Analytics
 RUN apt-get update -qq && \
   apt-get install -qq --yes --no-install-recommends zip && \
