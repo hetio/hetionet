@@ -1,5 +1,8 @@
 cd ~/
 
+# output date
+date --iso-8601=seconds --universal
+
 # stop docker container
 sh stop-docker.sh
 
