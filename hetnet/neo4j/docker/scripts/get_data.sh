@@ -14,7 +14,7 @@ fi
 if [ ! -d "guides" ]; then
   echo "Downloading and extracting guides"
   cp --recursive /guides ./
-  GUIDES_URL="https://github.com/dhimmel/het.io-rep-guides/raw/5dd1acb867154e3a46aa7bda6fe9526161ee5fe7/guides.tar.bz2"
+  GUIDES_URL="https://github.com/dhimmel/het.io-rep-guides/raw/fe74cd6db34cddc379f789e5ce5fe6b2c32abf2d/guides.tar.bz2"
   mkdir guides/rep
   curl --silent --location $GUIDES_URL | tar --extract --bzip2 --strip-components=1 --directory=guides/rep
 else

@@ -178,12 +178,35 @@ RETURN rel_type, rels[idx] AS example<!--/code--></pre>
 <p>Project Rephetio uses Hetionet to predict the probability that each compound treats each disease. The approach uses hetnet edge prediction — an algorithm that learns which types of paths occur more frequently between known treatments. Use the <a href="http://het.io/repurpose/" title="Project Rephetio Prediction Browser on het.io">Prediction Browser</a> to browse the predicted probabilities of treatment for 209,168 compound–disease pairs.</p>
 </div>
 <div class="paragraph">
-<p>Each prediction has a corresponding Neo4j guide, which provides additional details and visualization. For example, play the following command to see the evidence for clofarabine treating multiple sclerosis.</p>
+<p>Each prediction has a corresponding Neo4j guide, which provides additional details and visualization. For example, play the following commands to see the evidence for</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>bupropion for nicotine dependence</strong> (<a href="https://thinklab.com/d/203#8">read more</a>):</p>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:play https://neo4j.het.io/guides/rep/DB01156/DOID_0050742.html<!--/code--></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>clofarabine treating multiple sclerosis</strong> (<a href="https://thinklab.com/d/203#13">read more</a>):</p>
 <div class="listingblock">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:play https://neo4j.het.io/guides/rep/DB00631/DOID_2377.html<!--/code--></pre>
 </div>
+</div>
+</li>
+<li>
+<p><strong>nortriptyline treating migraine</strong> (<a href="https://thinklab.com/d/203#7">read more</a>):</p>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:play https://neo4j.het.io/guides/rep/DB00540/DOID_6364.html<!--/code--></pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 	</div>
   </div>
@@ -265,6 +288,9 @@ RETURN path<!--/code--></pre>
 </div>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>For more advanced examples, see our <a href="https://doi.org/10.15363/thinklab.d220">query depot</a>.</p>
 </div>
 	</div>
   </div>
