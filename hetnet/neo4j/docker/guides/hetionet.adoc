@@ -110,11 +110,27 @@ Note that by default, the Neo4j Browser draws all relationships between retrieve
 
 Project Rephetio uses Hetionet to predict the probability that each compound treats each disease. The approach uses hetnet edge prediction — an algorithm that learns which types of paths occur more frequently between known treatments. Use the link:http://het.io/repurpose/[Prediction Browser, title="Project Rephetio Prediction Browser on het.io"] to browse the predicted probabilities of treatment for 209,168 compound–disease pairs.
 
-Each prediction has a corresponding Neo4j guide, which provides additional details and visualization. For example, play the following command to see the evidence for clofarabine treating multiple sclerosis.
+Each prediction has a corresponding Neo4j guide, which provides additional details and visualization. For example, play the following commands to see the evidence for
 
+* *bupropion for nicotine dependence* (link:https://thinklab.com/d/203#8[read more]):
++
+[source,cypher]
+----
+:play https://neo4j.het.io/guides/rep/DB01156/DOID_0050742.html
+----
+
+* *clofarabine treating multiple sclerosis* (link:https://thinklab.com/d/203#13[read more]):
++
 [source,cypher]
 ----
 :play https://neo4j.het.io/guides/rep/DB00631/DOID_2377.html
+----
+
+* *nortriptyline treating migraine* (link:https://thinklab.com/d/203#7[read more]):
++
+[source,cypher]
+----
+:play https://neo4j.het.io/guides/rep/DB00540/DOID_6364.html
 ----
 
 == Learn how to query Hetionet using Cypher
@@ -176,6 +192,8 @@ RETURN rel
 MATCH path=(:BiologicalProcess {name: 'mitotic spindle checkpoint'})-[:PARTICIPATES_GpBP]-(gene:Gene)-[:EXPRESSES_AeG]-(:Anatomy {name: 'lung'})
 RETURN path
 ----
+
+For more advanced examples, see our link:https://doi.org/10.15363/thinklab.d220[query depot].
 
 == Style
 
