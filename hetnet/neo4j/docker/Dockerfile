@@ -1,4 +1,4 @@
-FROM neo4j:3.0.4
+FROM neo4j:3.0.6
 MAINTAINER Daniel Himmelstein, <daniel.himmelstein@gmail.com>
 
 COPY scripts /
@@ -10,8 +10,8 @@ COPY files/neo4j-guide-extension-3.0.1.jar /var/lib/neo4j/plugins
 COPY guides /guides
 
 # Install Neo4j APOC plugin
-RUN wget --quiet --directory-prefix=/var/lib/neo4j/plugins \
-  https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.0.4.1/apoc-3.0.4.1-all.jar
+# RUN wget --quiet --directory-prefix=/var/lib/neo4j/plugins \
+#  https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.0.4.1/apoc-3.0.4.1-all.jar
 
 # Update the Neo4j Browser source to improve search results and add Piwik Analytics
 RUN apt-get update -qq && \
