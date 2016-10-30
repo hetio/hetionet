@@ -8,12 +8,18 @@ The Neo4j graph uses slightly different names for metanodes (Neo4j labels) and m
 
 ## Neo4j setup instructions
 
-Download and extract Neo4j 3.0 Community Edition [from Neo4j](http://neo4j.com/download/other-releases/ "Neo4j Releases"). Navigate to the `data/databases` directory inside the Neo4j directory and run:
+Download and extract Neo4j 3.0 Community Edition [from Neo4j](http://neo4j.com/download/other-releases/ "Neo4j Releases"). Make sure the Neo4j server is stopped. Navigate to the `data/databases` directory inside the Neo4j directory and run:
 
 ```sh
+# Backup graph.db directory if it exists
+if [ -d "graph.db" ]; then
+  mv graph.db graph.db.backup_`date +%F`
+fi
+
+# Download and extract graph.db for Hetionet v1.0
 curl --location https://github.com/dhimmel/hetionet/raw/neo4j-3.0/hetnet/neo4j/hetionet-v1.0.db.tar.bz2 | tar --extract --bzip2
 ```
 
-If curl throws an error related to SSL or certificates, you can add the `--insecure` argument to 1curl` to allow connections to SSL sites without certs.
+If curl throws an error related to SSL or certificates, you can add the `--insecure` argument to `curl` to allow connections to SSL sites without certs.
 
-The above commands should create a `graph.db` directory inside `data`. You should now be able to power up your Neo4j server. Once the server is running you can access the browser at http://localhost:7474/.
+The above commands should create a `graph.db` directory inside `data`. You should now be able to power up your Neo4j server. Once the server is running you can access the browser at http://localhost:7474/. Delete the `graph.db` directory to uninstall Hetionet as the default Neo4j database.
