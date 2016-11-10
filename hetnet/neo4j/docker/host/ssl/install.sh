@@ -20,7 +20,3 @@ certbot certonly --standalone
 mkdir ~/ssl
 cp /etc/letsencrypt/live/neo4j.het.io/fullchain.pem ~/ssl/neo4j.cert
 cp /etc/letsencrypt/live/neo4j.het.io/privkey.pem ~/ssl/neo4j.key
-
-# Make sure to move renew.sh to ~/ssh/
-# Schedule renewal with `crontab -e`
-# `@monthly sh /root/ssl/renew.sh`
