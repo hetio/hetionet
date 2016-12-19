@@ -37,7 +37,7 @@ Neo4j is a database designed for hetnets (graphs with multiple node or relations
 ++++
 === Metagraph
 
-The metagraph shows the data model (schema) for Hetionet v1.0.
+The metagraph shows the data model (schema) for Hetionet v1.0. For an interactive version, run `CALL db.schema()`.
 
 ++++
 <img src="https://github.com/dhimmel/rephetio/raw/5f834b14b94b9b9d2082c5ae0303b57d634c3a40/figure/metagraph-cypher.png" title="Hetionet v1.0 Metagraph for Cypher" class="img-responsive">

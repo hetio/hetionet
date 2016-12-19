@@ -1,4 +1,4 @@
-FROM neo4j:3.0.6
+FROM neo4j:3.1.0
 MAINTAINER Daniel Himmelstein, <daniel.himmelstein@gmail.com>
 
 COPY scripts /
@@ -14,13 +14,12 @@ COPY guides /guides
 #  https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.0.4.1/apoc-3.0.4.1-all.jar
 
 # Update the Neo4j Browser source to improve search results and add Piwik Analytics
-RUN apt-get update -qq && \
-  apt-get install -qq --yes --no-install-recommends zip && \
+RUN apk add --no-cache --quiet zip && \
   cd /var/lib/neo4j/lib && \
   JAR_PATH=`ls neo4j-browser-*` && \
   HTML_PATH=browser/index.html && \
   unzip $JAR_PATH $HTML_PATH && \
-  OLD='<title ng-bind-template="Neo4j {{kernel\.store_dir}}">Neo4j</title>' && \
+  OLD='<title ng-bind-template="Neo4j {{titlebarString}}">Neo4j</title>' && \
   NEW='<title>Hetionet · Neo4j Browser</title>' && \
   sed --in-place "s|$OLD|$NEW|" $HTML_PATH && \
   OLD='<meta name="description" content="Neo4j Browser">' && \
