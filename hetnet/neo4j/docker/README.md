@@ -26,7 +26,7 @@ docker run \
   --publish=7474:7474 \
   --publish=7687:7687 \
   --volume=$HOME/neo4j/hetionet-data:/data \
-  --volume=$HOME/neo4j/hetionet-logs:/var/lib/neo4j/logs \
+  --volume=$HOME/neo4j/hetionet-logs:/logs \
   dhimmel/hetionet
 ```
 
