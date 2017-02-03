@@ -2,7 +2,7 @@
 
 This Docker image hosts Hetionet in a publicly accessible Neo4j instance. The image is on [Docker hub as `dhimmel/hetionet`](https://hub.docker.com/r/dhimmel/hetionet/) and the live container is available at https://neo4j.het.io.
 
-The image is highly specialized for our application and setup. For example, it includes a website-specific web analytics javascript. You can learn more our [customizations here](https://thinklab.com/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216). If you are simply looking to run a local Neo4j instance with Hetionet, you may find it easier to start with the [database store](https://github.com/dhimmel/hetionet/tree/neo4j-3.0/hetnet/neo4j) only rather than this Docker.
+The image is highly specialized for our application and setup. For example, it includes a website-specific web analytics javascript. You can learn more our [customizations here](https://thinklab.com/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216). If you are simply looking to run a local Neo4j instance with Hetionet, you may find it easier to start with the [database store](../) only rather than this Docker.
 
 The contents of this repository are mostly included in the Docker image. However, the [`host`](host) contains files that are meant for the cloud host running the Docker virtual machine.
 

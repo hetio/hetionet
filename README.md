@@ -16,7 +16,7 @@ The JSON and Neo4j formats contain node and edge properties, which are missing f
 
 ### Permuted Hetnets
 
-We've created five permuted derivatives of Hetionet. The [permutation](http://doi.org/10.15363/thinklab.d136 "Permuting hetnets and implementing randomized edge swaps in cypher · Thinklab discussion") randomizes edges while preserving node degree. Permuted hetnets are available in [`hetnet/permuted`](hetnet/permuted) in JSON and Neo4j 2.3 formats. Relationship properties are omitted from the permuted hetnets.
+We've created five permuted derivatives of Hetionet. The [permutation](https://doi.org/10.15363/thinklab.d136 "Permuting hetnets and implementing randomized edge swaps in cypher · Thinklab discussion") randomizes edges while preserving node degree. Permuted hetnets are available in [`hetnet/permuted`](hetnet/permuted) in JSON and Neo4j 2.3 formats. Relationship properties are omitted from the permuted hetnets.
 
 ## Network Description
 
@@ -28,4 +28,4 @@ Below, we provide two hetnet visualizations. Panel A shows the metagraph (graph 
 
 ## License
 
-All original content in this repository is released as [CC0](https://creativecommons.org/publicdomain/zero/1.0/ "CC0 1.0 Universal · Public Domain Dedication"). However, the hetnet integrates data from many resources and users should consider the licensing of each source (see [this table](https://github.com/dhimmel/integrate/blob/d482033bcaa913a976faf4a6ee08497281c739c3/licenses/README.md "Source license table")). We apply a `license` attribute on a per node and per edge basis for sources with defined licenses. However, some resources don't provide any license, so for those we've requested permission. More information is [available on Thinklab](http://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107 "Integrating resources with disparate licensing into an open network").
+All original content in this repository is released as [CC0](https://creativecommons.org/publicdomain/zero/1.0/ "CC0 1.0 Universal · Public Domain Dedication"). However, the hetnet integrates data from many resources and users should consider the licensing of each source (see [this table](https://github.com/dhimmel/integrate/blob/d482033bcaa913a976faf4a6ee08497281c739c3/licenses/README.md "Source license table")). We apply a `license` attribute on a per node and per edge basis for sources with defined licenses. However, some resources don't provide any license, so for those we've requested permission. More information is [available on Thinklab](https://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107 "Integrating resources with disparate licensing into an open network").
