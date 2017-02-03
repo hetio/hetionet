@@ -6,6 +6,8 @@ Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 
 
 ## Download Hetionet
 
+[![Latest Zenodo DOI](https://zenodo.org/badge/56091268.svg)](https://zenodo.org/badge/latestdoi/56091268)
+
 The network is available in three formats:
 
 + **JSON** — see [`hetnet/json`](hetnet/json)
