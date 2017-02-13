@@ -153,10 +153,10 @@ ORDER BY count DESC<!--/code--></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH ()-[r]-&gt;()
-WITH type(r) AS rel_type, collect(r) AS rels
-WITH rel_type, rels, toInt(rand() * size(rels)) AS idx
-RETURN rel_type, rels[idx] AS example<!--/code--></pre>
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH ()-[rel]-&gt;()
+WITH type(rel) AS rel_type, collect(rel) AS rels
+WITH rels[toInteger(rand() * size(rels))] AS rel
+RETURN startNode(rel), rel, endNode(rel)<!--/code--></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -246,8 +246,8 @@ RETURN node<!--/code--></pre>
 <p><strong>Find the anatomies (tissue types) where lung cancer localizes:</strong></p>
 <div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (:Disease {name: 'lung cancer'})-[rel:LOCALIZES_DlA]-&gt;()
-RETURN rel<!--/code--></pre>
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path = (:Disease {name: 'lung cancer'})-[:LOCALIZES_DlA]-&gt;()
+RETURN path<!--/code--></pre>
 </div>
 </div>
 </li>
@@ -255,8 +255,8 @@ RETURN rel<!--/code--></pre>
 <p><strong>Find all genes associated with spinal cancer:</strong></p>
 <div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (:Disease {name: 'spinal cancer'})-[r:ASSOCIATES_DaG]-&gt;()
-RETURN r<!--/code--></pre>
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path = (:Disease {name: 'spinal cancer'})-[:ASSOCIATES_DaG]-&gt;()
+RETURN path<!--/code--></pre>
 </div>
 </div>
 </li>
@@ -264,7 +264,9 @@ RETURN r<!--/code--></pre>
 <p><strong>Find all genes associated with both liver and kidney cancer:</strong></p>
 <div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path=(:Disease {name: 'liver cancer'})-[:ASSOCIATES_DaG]-(:Gene)-[:ASSOCIATES_DaG]-(:Disease {name: 'kidney cancer'})
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path = (source:Disease)-[:ASSOCIATES_DaG]-(:Gene)-[:ASSOCIATES_DaG]-(target:Disease)
+WHERE source.name = 'liver cancer'
+  AND target.name = 'kidney cancer'
 RETURN path<!--/code--></pre>
 </div>
 </div>
@@ -273,8 +275,8 @@ RETURN path<!--/code--></pre>
 <p><strong>Find all genes that participate in the mitotic spindle checkpoint biological process:</strong></p>
 <div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH ({name: 'mitotic spindle checkpoint'})-[rel:PARTICIPATES_GpBP]-()
-RETURN rel<!--/code--></pre>
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path = ({name: 'mitotic spindle checkpoint'})-[rel:PARTICIPATES_GpBP]-()
+RETURN path<!--/code--></pre>
 </div>
 </div>
 </li>
@@ -282,7 +284,9 @@ RETURN rel<!--/code--></pre>
 <p><strong>Find all genes that participate in the mitotic spindle checkpoint and are expressed in the lung:</strong></p>
 <div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path=(:BiologicalProcess {name: 'mitotic spindle checkpoint'})-[:PARTICIPATES_GpBP]-(gene:Gene)-[:EXPRESSES_AeG]-(:Anatomy {name: 'lung'})
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path = (bp:BiologicalProcess)-[:PARTICIPATES_GpBP]-(gene:Gene)-[:EXPRESSES_AeG]-(anatomy:Anatomy)
+WHERE bp.name = 'mitotic spindle checkpoint'
+  AND anatomy.name = 'lung'
 RETURN path<!--/code--></pre>
 </div>
 </div>

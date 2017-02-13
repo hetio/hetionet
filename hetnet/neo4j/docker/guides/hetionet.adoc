@@ -94,10 +94,10 @@ The following query retrieves a random relationship of each type. The query goes
 
 [source,cypher]
 ----
-MATCH ()-[r]->()
-WITH type(r) AS rel_type, collect(r) AS rels
-WITH rel_type, rels, toInt(rand() * size(rels)) AS idx
-RETURN rel_type, rels[idx] AS example
+MATCH ()-[rel]->()
+WITH type(rel) AS rel_type, collect(rel) AS rels
+WITH rels[toInteger(rand() * size(rels))] AS rel
+RETURN startNode(rel), rel, endNode(rel)
 ----
 
 Note that by default, the Neo4j Browser draws all relationships between retrieved nodes. Toggle `AUTO-COMPLETE` to `OFF` (located in the bottom right of a frame) to _only_ display queried relationships.
@@ -157,23 +157,25 @@ RETURN node
 +
 [source,cypher]
 ----
-MATCH (:Disease {name: 'lung cancer'})-[rel:LOCALIZES_DlA]->()
-RETURN rel
+MATCH path = (:Disease {name: 'lung cancer'})-[:LOCALIZES_DlA]->()
+RETURN path
 ----
 
 3. *Find all genes associated with spinal cancer:*
 +
 [source,cypher]
 ----
-MATCH (:Disease {name: 'spinal cancer'})-[r:ASSOCIATES_DaG]->()
-RETURN r
+MATCH path = (:Disease {name: 'spinal cancer'})-[:ASSOCIATES_DaG]->()
+RETURN path
 ----
 
 4. *Find all genes associated with both liver and kidney cancer:*
 +
 [source,cypher]
 ----
-MATCH path=(:Disease {name: 'liver cancer'})-[:ASSOCIATES_DaG]-(:Gene)-[:ASSOCIATES_DaG]-(:Disease {name: 'kidney cancer'})
+MATCH path = (source:Disease)-[:ASSOCIATES_DaG]-(:Gene)-[:ASSOCIATES_DaG]-(target:Disease)
+WHERE source.name = 'liver cancer'
+  AND target.name = 'kidney cancer'
 RETURN path
 ----
 
@@ -181,15 +183,17 @@ RETURN path
 +
 [source,cypher]
 ----
-MATCH ({name: 'mitotic spindle checkpoint'})-[rel:PARTICIPATES_GpBP]-()
-RETURN rel
+MATCH path = ({name: 'mitotic spindle checkpoint'})-[rel:PARTICIPATES_GpBP]-()
+RETURN path
 ----
 
 6. *Find all genes that participate in the mitotic spindle checkpoint and are expressed in the lung:*
 +
 [source,cypher]
 ----
-MATCH path=(:BiologicalProcess {name: 'mitotic spindle checkpoint'})-[:PARTICIPATES_GpBP]-(gene:Gene)-[:EXPRESSES_AeG]-(:Anatomy {name: 'lung'})
+MATCH path = (bp:BiologicalProcess)-[:PARTICIPATES_GpBP]-(gene:Gene)-[:EXPRESSES_AeG]-(anatomy:Anatomy)
+WHERE bp.name = 'mitotic spindle checkpoint'
+  AND anatomy.name = 'lung'
 RETURN path
 ----
 
