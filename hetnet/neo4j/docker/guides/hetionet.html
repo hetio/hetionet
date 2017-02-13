@@ -261,13 +261,17 @@ RETURN path<!--/code--></pre>
 </div>
 </li>
 <li>
-<p><strong>Find all genes associated with both liver and kidney cancer:</strong></p>
+<p><strong>Find all genes associated with both liver and kidney cancer</strong> (return results as a table):</p>
 <div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH path = (source:Disease)-[:ASSOCIATES_DaG]-(:Gene)-[:ASSOCIATES_DaG]-(target:Disease)
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (source:Disease)-[:ASSOCIATES_DaG]-(gene:Gene)-[:ASSOCIATES_DaG]-(target:Disease)
 WHERE source.name = 'liver cancer'
   AND target.name = 'kidney cancer'
-RETURN path<!--/code--></pre>
+RETURN
+  gene.name AS gene_symbol,
+  gene.description AS gene_name,
+  gene.url AS url
+ORDER BY gene_symbol<!--/code--></pre>
 </div>
 </div>
 </li>

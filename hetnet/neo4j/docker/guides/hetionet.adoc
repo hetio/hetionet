@@ -169,14 +169,18 @@ MATCH path = (:Disease {name: 'spinal cancer'})-[:ASSOCIATES_DaG]->()
 RETURN path
 ----
 
-4. *Find all genes associated with both liver and kidney cancer:*
+4. *Find all genes associated with both liver and kidney cancer* (return results as a table):
 +
 [source,cypher]
 ----
-MATCH path = (source:Disease)-[:ASSOCIATES_DaG]-(:Gene)-[:ASSOCIATES_DaG]-(target:Disease)
+MATCH (source:Disease)-[:ASSOCIATES_DaG]-(gene:Gene)-[:ASSOCIATES_DaG]-(target:Disease)
 WHERE source.name = 'liver cancer'
   AND target.name = 'kidney cancer'
-RETURN path
+RETURN
+  gene.name AS gene_symbol,
+  gene.description AS gene_name,
+  gene.url AS url
+ORDER BY gene_symbol
 ----
 
 5. *Find all genes that participate in the mitotic spindle checkpoint biological process:*
