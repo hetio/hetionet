@@ -2,6 +2,8 @@
 # See https://neo4j.com/developer/docker-3.x/ for doc
 docker run \
   --detach \
+  --name=hetionet-container \
+  --restart=on-failure:50 \
   --publish=80:7474 \
   --publish=443:7473 \
   --publish=7687:7687 \
