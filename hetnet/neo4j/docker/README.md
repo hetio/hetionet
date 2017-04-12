@@ -23,6 +23,7 @@ To run the image on a local system, (development or local usage) run the followi
 
 ```sh
 docker run \
+  --name=hetionet-container \
   --publish=7474:7474 \
   --publish=7687:7687 \
   --volume=$HOME/neo4j/hetionet-data:/data \
