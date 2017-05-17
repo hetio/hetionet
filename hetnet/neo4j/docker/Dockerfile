@@ -1,4 +1,4 @@
-FROM neo4j:3.1.3
+FROM neo4j:3.1.4
 MAINTAINER Daniel Himmelstein, <daniel.himmelstein@gmail.com>
 
 COPY scripts /
