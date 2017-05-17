@@ -57,7 +57,7 @@
 <p>Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.</p>
 </div>
 <div class="paragraph">
-<p>We created <a href="https://github.com/dhimmel/hetionet">Hetionet</a> v1.0 for <a href="https://thinklab.com/p/rephetio">Project Rephetio</a> — where we systematically looked at why drugs work and predicted new uses for existing drugs.</p>
+<p>We created <a href="https://github.com/dhimmel/hetionet">Hetionet</a> v1.0 for <a href="https://thinklab.com/p/rephetio">Project Rephetio</a> (<a href="https://doi.org/10.1101/087619">manuscript</a>) — where we systematically looked at why drugs work and predicted new uses for existing drugs.</p>
 </div>
 </div>
 <div class="col-lg-3 ng-scope">
@@ -66,7 +66,10 @@
 
    <h4>Neo4j</h4>
    <div class="paragraph">
-<p>Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You&#8217;re currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can&#8217;t modify the network. However, you can run queries and and explore the network. If you are new to Neo4j, check out the following guides:</p>
+<p>Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You&#8217;re currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can&#8217;t modify the network. However, you can run queries and and explore the network.</p>
+</div>
+<div class="paragraph">
+<p>If you are new to Neo4j, check out the following guides:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -308,16 +311,27 @@ RETURN path<!--/code--></pre>
 
 <slide class="row-fluid">
   <div class="col-sm-12">
-    <h3>Style</h3>
+    <h3>Miscellany</h3>
     <br/>
     <div>
-      <div class="paragraph">
+      
+
+
+   <h4>Style</h4>
+   <div class="paragraph">
 <p>Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from the first slide in this guide. This command only needs to be run once per web browser.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding"><!--code-->:style https://neo4j.het.io/guides/graphstyle.grass<!--/code--></pre>
 </div>
+</div>
+
+
+
+   <h4>Hosting</h4>
+   <div class="paragraph">
+<p><a href="https://neo4j.het.io"><strong>neo4j.het.io</strong></a> is hosted on <a href="https://www.digitalocean.com/">DigitalOcean</a> (<a href="https://doi.org/10.15363/thinklab.d216">learn more</a>). We&#8217;d like to thanks DigitalOcean for their sponsorship of the Hetionet Browser.</p>
 </div>
 	</div>
   </div>

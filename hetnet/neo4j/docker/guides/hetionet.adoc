@@ -13,7 +13,7 @@
 
 Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.
 
-We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:https://thinklab.com/p/rephetio[Project Rephetio] — where we systematically looked at why drugs work and predicted new uses for existing drugs.
+We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:https://thinklab.com/p/rephetio[Project Rephetio] (link:https://doi.org/10.1101/087619[manuscript]) — where we systematically looked at why drugs work and predicted new uses for existing drugs.
 
 ++++
 </div>
@@ -25,7 +25,9 @@ We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:http
 
 === Neo4j
 
-Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You're currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can't modify the network. However, you can run queries and and explore the network. If you are new to Neo4j, check out the following guides:
+Neo4j is a database designed for hetnets (graphs with multiple node or relationship types). You're currently interacting with Hetionet through the Neo4j Browser, which provides a web interface to the database. This is a read-only instance, so you can't modify the network. However, you can run queries and and explore the network.
+
+If you are new to Neo4j, check out the following guides:
 
  * +++<a play-topic="concepts">Concepts</a>+++
  * +++<a play-topic="cypher">Cypher</a>+++
@@ -203,7 +205,9 @@ RETURN path
 
 For more advanced examples, see our link:https://doi.org/10.15363/thinklab.d220[query depot].
 
-== Style
+== Miscellany
+
+=== Style
 
 Execute this command to load the hetionet style. Once the style is loaded, the node coloring in the browser will match the metagraph from the first slide in this guide. This command only needs to be run once per web browser.
 
@@ -211,6 +215,10 @@ Execute this command to load the hetionet style. Once the style is loaded, the n
 ----
 :style https://neo4j.het.io/guides/graphstyle.grass
 ----
+
+=== Hosting
+
+link:https://neo4j.het.io[*neo4j.het.io*] is hosted on link:https://www.digitalocean.com/[DigitalOcean] (link:https://doi.org/10.15363/thinklab.d216[learn more]). We'd like to thanks DigitalOcean for their sponsorship of the Hetionet Browser.
 
 == Querying Hetionet from Python
 
