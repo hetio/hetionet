@@ -15,3 +15,11 @@ SSL renewal can be scheduled to execute every fortnight (1st and 16th of each mo
 ```
 0 4 1,16 * *  sh /root/ssl/renew.sh >> /root/ssl/cron-renew.log
 ```
+
+## Download this directory
+
+You can download the contents of this directory from GitHub to the current working directory, using subversion:
+
+```sh
+svn export --force https://github.com/dhimmel/hetionet.git/trunk/hetnet/neo4j/docker/host/ .
+```
