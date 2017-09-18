@@ -15,7 +15,12 @@ TAG="dhimmel/hetionet:hetionet-v1.0_neo4j-3.2.3"
 docker build --tag dhimmel/hetionet:latest --tag $TAG --file Dockerfile .
 ```
 
-When the image is ready, it's uploaded to Docker hub using `docker push dhimmel/hetionet`.
+When the image is ready, it's uploaded to Docker hub using:
+
+```sh
+docker push dhimmel/hetionet:latest
+docker push $TAG
+```
 
 ## Running the docker
 
