@@ -6,7 +6,7 @@
 */	
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
-.imageblock .content img {max-width: 900px;max-height: 300px;}
+.imageblock .content img, .image img {max-width: 900px;max-height: 300px;}
 .deck h3, .deck h4 {display: block !important;margin-bottom:8px;margin-top:5px;}
 .listingblock {margin:8px;}
 .pull-bottom {position:relative;bottom:1em;}
@@ -16,9 +16,10 @@
 .admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.admonitionblock.note.speaker { display:none; }
 </style>
 <style type="text/css" media="screen">
-#editor.maximize-editor .CodeMirror-code { font-size:24px; line-height:26px; }
+/* #editor.maximize-editor .CodeMirror-code { font-size:24px; line-height:26px; } */
 </style>
 <article class="guide" ng-controller="AdLibDataController">
   <carousel class="deck container-fluid">
@@ -57,7 +58,7 @@
 <p>Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.</p>
 </div>
 <div class="paragraph">
-<p>We created <a href="https://github.com/dhimmel/hetionet">Hetionet</a> v1.0 for <a href="https://thinklab.com/p/rephetio">Project Rephetio</a> (<a href="https://doi.org/10.1101/087619">manuscript</a>) — where we systematically looked at why drugs work and predicted new uses for existing drugs.</p>
+<p>We created <a href="https://github.com/dhimmel/hetionet">Hetionet</a> v1.0 for <a href="https://doi.org/bszr">Project Rephetio</a> (<a href="https://doi.org/10.1101/087619">manuscript</a>) — where we systematically looked at why drugs work and predicted new uses for existing drugs.</p>
 </div>
 </div>
 <div class="col-lg-3 ng-scope">
@@ -179,7 +180,7 @@ To show every relationship between the displayed nodes instead, select <code>Con
     <br/>
     <div>
       <div class="paragraph">
-<p>Project Rephetio uses Hetionet to predict the probability that each compound treats each disease. The approach uses hetnet edge prediction — an algorithm that learns which types of paths occur more frequently between known treatments. Use the <a href="http://het.io/repurpose/" title="Project Rephetio Prediction Browser on het.io">Prediction Browser</a> to browse the predicted probabilities of treatment for 209,168 compound–disease pairs.</p>
+<p>Project Rephetio uses Hetionet to predict the probability that each compound treats each disease. The approach uses hetnet edge prediction — an algorithm that learns which types of paths occur more frequently between known treatments. Use the <a href="http://het.io/repurpose/">Prediction Browser</a> to browse the predicted probabilities of treatment for 209,168 compound–disease pairs.</p>
 </div>
 <div class="paragraph">
 <p>Each prediction has a corresponding Neo4j guide, which provides additional details and visualization. For example, play the following commands to see the evidence for</p>
@@ -187,7 +188,7 @@ To show every relationship between the displayed nodes instead, select <code>Con
 <div class="ulist">
 <ul>
 <li>
-<p><strong>bupropion for nicotine dependence</strong> (<a href="https://thinklab.com/d/203#8">read more</a>):</p>
+<p><strong>bupropion for nicotine dependence</strong> (<a href="https://think-lab.github.io/d/203/#8">read more</a>):</p>
 <div class="listingblock">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:play https://neo4j.het.io/guides/rep/DB01156/DOID_0050742.html<!--/code--></pre>
@@ -195,7 +196,7 @@ To show every relationship between the displayed nodes instead, select <code>Con
 </div>
 </li>
 <li>
-<p><strong>clofarabine treating multiple sclerosis</strong> (<a href="https://thinklab.com/d/203#13">read more</a>):</p>
+<p><strong>clofarabine treating multiple sclerosis</strong> (<a href="https://think-lab.github.io/d/203/#13">read more</a>):</p>
 <div class="listingblock">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:play https://neo4j.het.io/guides/rep/DB00631/DOID_2377.html<!--/code--></pre>
@@ -203,7 +204,7 @@ To show every relationship between the displayed nodes instead, select <code>Con
 </div>
 </li>
 <li>
-<p><strong>nortriptyline treating migraine</strong> (<a href="https://thinklab.com/d/203#7">read more</a>):</p>
+<p><strong>nortriptyline treating migraine</strong> (<a href="https://think-lab.github.io/d/203/#7">read more</a>):</p>
 <div class="listingblock">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:play https://neo4j.het.io/guides/rep/DB00540/DOID_6364.html<!--/code--></pre>

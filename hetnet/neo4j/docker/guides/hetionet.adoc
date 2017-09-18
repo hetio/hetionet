@@ -13,7 +13,7 @@
 
 Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.
 
-We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:https://thinklab.com/p/rephetio[Project Rephetio] (link:https://doi.org/10.1101/087619[manuscript]) — where we systematically looked at why drugs work and predicted new uses for existing drugs.
+We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:https://doi.org/bszr[Project Rephetio] (link:https://doi.org/10.1101/087619[manuscript]) — where we systematically looked at why drugs work and predicted new uses for existing drugs.
 
 ++++
 </div>
@@ -115,21 +115,21 @@ Project Rephetio uses Hetionet to predict the probability that each compound tre
 
 Each prediction has a corresponding Neo4j guide, which provides additional details and visualization. For example, play the following commands to see the evidence for
 
-* *bupropion for nicotine dependence* (link:https://thinklab.com/d/203#8[read more]):
+* *bupropion for nicotine dependence* (link:https://think-lab.github.io/d/203/#8[read more]):
 +
 [source,cypher]
 ----
 :play https://neo4j.het.io/guides/rep/DB01156/DOID_0050742.html
 ----
 
-* *clofarabine treating multiple sclerosis* (link:https://thinklab.com/d/203#13[read more]):
+* *clofarabine treating multiple sclerosis* (link:https://think-lab.github.io/d/203/#13[read more]):
 +
 [source,cypher]
 ----
 :play https://neo4j.het.io/guides/rep/DB00631/DOID_2377.html
 ----
 
-* *nortriptyline treating migraine* (link:https://thinklab.com/d/203#7[read more]):
+* *nortriptyline treating migraine* (link:https://think-lab.github.io/d/203/#7[read more]):
 +
 [source,cypher]
 ----
