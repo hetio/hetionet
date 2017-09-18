@@ -102,7 +102,8 @@ WITH rels[toInteger(rand() * size(rels))] AS rel
 RETURN startNode(rel), rel, endNode(rel)
 ----
 
-Note that by default, the Neo4j Browser draws all relationships between retrieved nodes. Toggle `AUTO-COMPLETE` to `OFF` (located in the bottom right of a frame) to _only_ display queried relationships.
+By default, the Hetionet Neo4j Browser only shows relationships that were returned by the query.
+To show every relationship between the displayed nodes instead, select `Connect result nodes` under settings.
 
 ++++
 </div>
