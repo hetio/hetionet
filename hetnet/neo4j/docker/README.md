@@ -11,7 +11,7 @@ The contents of this repository are mostly included in the Docker image. However
 Build the image using the following command:
 
 ```sh
-TAG="dhimmel/hetionet:hetionet-v1.0_neo4j-3.1.4"
+TAG="dhimmel/hetionet:hetionet-v1.0_neo4j-3.2.3"
 docker build --tag dhimmel/hetionet:latest --tag $TAG --file Dockerfile .
 ```
 
@@ -24,6 +24,7 @@ To run the image on a local system, (development or local usage) run the followi
 ```sh
 docker run \
   --name=hetionet-container \
+  --rm \
   --publish=7474:7474 \
   --publish=7687:7687 \
   --volume=$HOME/neo4j/hetionet-data:/data \
