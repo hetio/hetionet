@@ -1,6 +1,11 @@
 # Hetionet: an integrative network of disease
 
-Hetionet is a hetnet — network with multiple node and edge (relationship) types — which encodes biology. The hetnet was designed for [Project Rephetio](http://thinklab.com/p/rephetio "Repurposing drugs on a hetnet · Project Rephetio on Thinklab"), which aims to systematically identify why drugs work and predict new therapies for drugs.
+Hetionet is a hetnet — network with multiple node and edge (relationship) types — which encodes biology. The hetnet was designed for [Project Rephetio](https://doi.org/10.15363/thinklab.4 "Repurposing drugs on a hetnet · Project Rephetio on Thinklab"), which aims to systematically identify why drugs work and predict new therapies for drugs.
+The research article describing Project Rephetio and Hetionet v1.0 is:
+
+> [**Systematic integration of biomedical knowledge prioritizes drugs for repurposing**](https://doi.org/10.7554/eLife.26726)<br>
+<small>Daniel S Himmelstein, Antoine Lizee, Christine Hessler, Leo Brueggeman, Sabrina L Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio E Baranzini</small><br>
+_eLife_ (2017-09-22) DOI: `10.7554/eLife.26726`
 
 Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types. This repository is currently only a download location for Hetionet. The data integration and hetnet creation occurs in a separate repository ([`dhimmel/integrate`](https://github.com/dhimmel/integrate/tree/d482033bcaa913a976faf4a6ee08497281c739c3)) and is imported to this repository by [`import.ipynb`](import.ipynb).
 
