@@ -1,4 +1,4 @@
-FROM neo4j:3.2.3-enterprise
+FROM neo4j:3.2.8-enterprise
 MAINTAINER Daniel Himmelstein, <daniel.himmelstein@gmail.com>
 
 COPY scripts /
