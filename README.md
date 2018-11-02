@@ -25,6 +25,12 @@ The JSON and Neo4j formats contain node and edge properties, which are missing f
 
 We've created five permuted derivatives of Hetionet. The [permutation](https://doi.org/10.15363/thinklab.d136 "Permuting hetnets and implementing randomized edge swaps in cypher · Thinklab discussion") randomizes edges while preserving node degree. Permuted hetnets are available in [`hetnet/permuted`](hetnet/permuted) in JSON and Neo4j 2.3 formats. Relationship properties are omitted from the permuted hetnets.
 
+### Cloning
+
+Large files in this repository are stored using [Git LFS](https://git-lfs.github.com/).
+If cloning this repository, please make sure that Git LFS is installed on your system.
+Otherwise, git will checkout text pointers for large files rather than the large files themselves!
+
 ## Network Description
 
 [`describe`](describe) contains summary statistics on the hetnet. See [`describe/nodes/metanodes.tsv`](describe/nodes/metanodes.tsv) for details on the node types in the hetnet. See [`describe/edges/metaedges.tsv`](describe/edges/metaedges.tsv) for details on the edge types.
