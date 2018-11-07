@@ -13,13 +13,20 @@ Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 
 
 [![Latest Zenodo DOI](https://zenodo.org/badge/56091268.svg)](https://zenodo.org/badge/latestdoi/56091268)
 
-The network is available in three formats:
+The network is available in four formats:
 
 + **JSON** — see [`hetnet/json`](hetnet/json)
 + **Neo4j** — see [`hetnet/neo4j`](hetnet/neo4j)
 + **TSV** — see [`hetnet/tsv`](hetnet/tsv)
++ **matrix** — see [`hetnet/matrix`](hetnet/matrix)
 
-The JSON and Neo4j formats contain node and edge properties, which are missing from the TSVs, including licensing information. Therefore the recommended formats are JSON and Neo4j. Our [`hetio` package](https://github.com/dhimmel/hetio "Hetnets in Python · GitHub") in Python reads the JSON format, but it is otherwise a simple yet new format. The Neo4j graph database has an established and thriving ecosystem. However, if you would like to access Hetionet without Neo4j, then we suggest the JSON format. Additional usage information is available at the corresponding download locations.
+The JSON and Neo4j formats contain node and edge properties, which are absent in the TSV and matrix formats, including licensing information.
+Therefore the recommended formats are JSON and Neo4j.
+Our [`hetio` package](https://github.com/dhimmel/hetio "Hetnets in Python · GitHub") in Python reads the JSON format, but it is otherwise a simple yet new format.
+The Neo4j graph database has an established and thriving ecosystem.
+However, if you would like to access Hetionet without Neo4j, then we suggest the JSON format.
+The matrix format refers to HetMat archives, which store edge adjacency matrices on disk.
+Additional usage information is available at the corresponding download locations.
 
 ### Permuted Hetnets
 
