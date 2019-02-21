@@ -21,5 +21,5 @@ SSL renewal can be scheduled to execute every fortnight (1st and 16th of each mo
 You can download the contents of this directory from GitHub to the current working directory, using subversion:
 
 ```sh
-svn export --force https://github.com/dhimmel/hetionet.git/trunk/hetnet/neo4j/docker/host/ .
+svn export --force https://github.com/hetio/hetionet.git/trunk/hetnet/neo4j/docker/host/ .
 ```

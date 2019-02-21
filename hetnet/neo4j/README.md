@@ -17,7 +17,7 @@ if [ -d "graph.db" ]; then
 fi
 
 # Download and extract graph.db for Hetionet v1.0
-curl --location https://github.com/dhimmel/hetionet/raw/master/hetnet/neo4j/hetionet-v1.0.db.tar.bz2 | tar --extract --bzip2
+curl --location https://github.com/hetio/hetionet/raw/master/hetnet/neo4j/hetionet-v1.0.db.tar.bz2 | tar --extract --bzip2
 ```
 
 If curl throws an error related to SSL or certificates, you can add the `--insecure` argument to `curl` to allow connections to SSL sites without certs.

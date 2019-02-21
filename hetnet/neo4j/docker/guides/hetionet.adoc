@@ -13,7 +13,7 @@
 
 Hetionet is a network of biology, disease, and pharmacology. Knowledge from millions of biomedical studies over the last half century have been encoded into a single hetnet. Version 1.0 contains 47,031 nodes of 11 types and 2,250,197 relationships of 24 types.
 
-We created link:https://github.com/dhimmel/hetionet[Hetionet] v1.0 for link:https://doi.org/bszr[Project Rephetio] (link:https://doi.org/10.7554/eLife.26726[publication]) — where we systematically looked at why drugs work and predicted new uses for existing drugs.
+We created link:https://github.com/hetio/hetionet[Hetionet] v1.0 for link:https://doi.org/bszr[Project Rephetio] (link:https://doi.org/10.7554/eLife.26726[publication]) — where we systematically looked at why drugs work and predicted new uses for existing drugs.
 
 ++++
 </div>
