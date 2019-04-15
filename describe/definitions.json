@@ -10,7 +10,7 @@
     "Cellular Component": "The locations relative to cellular structures in which a gene product performs a function. From Gene Ontology.",
     "Molecular Function": "activities that occur at the molecular level, such as \"catalysis\" or \"transport\". From Gene Ontology.",
     "Pathway": "A series of actions among molecules in a cell that leads to a certain product or change in the cell. From WikiPathways, Reactome, and Pathway Interaction Database.",
-    "Pharmocologic Class": "\"Chemical/Ingredient\", \"Mechanism of Action\", and \"Physiologic Effect\" FDA class types from DrugCentral"
+    "Pharmacologic Class": "\"Chemical/Ingredient\", \"Mechanism of Action\", and \"Physiologic Effect\" FDA class types from DrugCentral"
   },
   "metaedges": {},
   "properties": {
