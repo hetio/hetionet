@@ -1,0 +1,37 @@
+{
+  "metanodes": {
+    "Gene": "Protein-coding human genes from Entrez Gene",
+    "Compound": "Approved small molecule compounds with documented chemical structures from DrugBank",
+    "Anatomy": "Anatomical structures from Uberon",
+    "Disease": "Complex diseases from the Disease Ontology. Selected to be distinct and specific enough to be clinically relevant yet general enough to be well annotated.",
+    "Symptom": "Signs and Symptoms (i.e. clinical abnormalities that can indicate a medical condition) from the MeSH Ontology",
+    "Side Effect": "Adverse drug reactions from SIDER/UMLS",
+    "Biological Process": "Larger processes or biological programs accomplished by multiple molecular activities. From Gene Ontology.",
+    "Cellular Component": "The locations relative to cellular structures in which a gene product performs a function. From Gene Ontology.",
+    "Molecular Function": "activities that occur at the molecular level, such as \"catalysis\" or \"transport\". From Gene Ontology.",
+    "Pathway": "A series of actions among molecules in a cell that leads to a certain product or change in the cell. From WikiPathways, Reactome, and Pathway Interaction Database.",
+    "Pharmocologic Class": "\"Chemical/Ingredient\", \"Mechanism of Action\", and \"Physiologic Effect\" FDA class types from DrugCentral"
+  },
+  "metaedges": {},
+  "properties": {
+    "common": {
+      "license": "The license governing usage of the information as per its source database"
+    },
+    "nodes": {
+      "name": "The name of the node",
+      "metanode": "The type of the node",
+      "identifier": "The identifier for accessing the node from its particular source",
+      "source": "The database from which the node and its properties were gathered",
+      "description": "Additional information about the node",
+      "class_type": "The FDA class type of the pharmacologic class",
+      "chromosome": "Which chromosome the gene is on",
+      "inchi": "The IUPAC International Chemical Identifier (InChI) for the compound",
+      "inchikey": "A condensed representation of the InChI",
+      "bto_id": "The BRENDA Tissue Ontology (BTO) identifier for the node",
+      "mesh_id": "The Medical Subject Headings (MeSH) identifier for the node"
+    },
+    "edges": {
+      "source": "The database from which the edge and its properties were gathered"
+    }
+  }
+}
