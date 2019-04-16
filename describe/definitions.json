@@ -1,0 +1,62 @@
+{
+  "metanodes": {
+    "Gene": "Protein-coding human genes. From Entrez Gene.",
+    "Compound": "Approved small molecule compounds with documented chemical structures. From DrugBank.",
+    "Anatomy": "Anatomical structures, excluding structures that are known not to be found in humans. From Uberon.",
+    "Disease": "Complex diseases, selected to be distinct and specific enough to be clinically relevant yet general enough to be well annotated. From Disease Ontology.",
+    "Symptom": "Signs and Symptoms (i.e. clinical abnormalities that can indicate a medical condition). From the MeSH ontology.",
+    "Side Effect": "Adverse drug reactions. From SIDER/UMLS.",
+    "Biological Process": "Larger processes or biological programs accomplished by multiple molecular activities. From Gene Ontology.",
+    "Cellular Component": "The locations relative to cellular structures in which a gene product performs a function. From Gene Ontology.",
+    "Molecular Function": "Activities that occur at the molecular level, such as \"catalysis\" or \"transport\". From Gene Ontology.",
+    "Pathway": "A series of actions among molecules in a cell that leads to a certain product or change in the cell. From WikiPathways, Reactome, and Pathway Interaction Database.",
+    "Pharmacologic Class": "\"Chemical/Ingredient\", \"Mechanism of Action\", and \"Physiologic Effect\" FDA class types. From DrugCentral."
+  },
+  "metaedges": {
+    "Anatomy–downregulates–Gene": "The Gene is under-expressed in the Anatomy in post-juvenile adult human samples according to Bgee",
+    "Anatomy–expresses–Gene": "The Gene is over-expressed in the Anatomy according to Bgee or TISSUES",
+    "Anatomy–upregulates–Gene": "The Gene is over-expressed in the Anatomy in post-juvenile adult human samples according to Bgee",
+    "Compound–binds–Gene": "The Compound physically binds to the Gene's protein product according to BindingDB, DrugBank, or DrugCentral",
+    "Compound–causes–Side Effect": "The Compound can cause the Side Effect according to a drug label in SIDER 4.1",
+    "Compound–downregulates–Gene": "The Gene is under-expressed in samples exposed to the Compound according to a consensus signature from LINCS L1000",
+    "Compound–palliates–Disease": "The Compound is a symptomatic indication for the Disease (i.e. the Compound treats a significant symptom of the Disease) according to PharmacotherapyDB",
+    "Compound–resembles–Compound": "The Compounds are chemical similar to each other: Their extended connectivity fingerprints have a Dice coefficient ≥ 0.5.",
+    "Compound–treats–Disease": "The Compound is a disease-modifying indication for the Disease (i.e. the Compound therapeutically changes the underlying or downstream biology of the Disease) according to PharmacotherapyDB",
+    "Compound–upregulates–Gene": "The Gene is over-expressed in samples exposed to the Compound according to a consensus signature from LINCS L1000",
+    "Disease–associates–Gene": "The Gene is associated with the Gene according to GWAS Catalog, DISEASES, DisGeNET, or DOAF",
+    "Disease–downregulates–Gene": "The Gene is under-expressed in Disease samples according to a STARGEO meta-analysis",
+    "Disease–localizes–Anatomy": "The Disease affects or is related to the Anatomy as inferred by co-occurrence in MEDLINE abstracts",
+    "Disease–presents–Symptom": "The Disease presents the Anatomy as inferred by co-occurrence in MEDLINE abstracts",
+    "Disease–resembles–Disease": "Two Diseases are similar as inferred by co-occurrence in MEDLINE abstracts",
+    "Disease–upregulates–Gene": "The Gene is over-expressed in Disease samples according to a STARGEO meta-analysis",
+    "Gene–covaries–Gene": "Two genes have similar evolutionary histories in mammals, according to Evolutionary Rate Covariation ≥ 0.7 (Priedigkeit et al, 2015)",
+    "Gene–interacts–Gene": "The genes produce physically-interacting proteins in humans according to the Human Reference Protein Interactome Mapping Project, the Incomplete Interactome, or other PPI databases previously used by Hetio",
+    "Gene–participates–Biological Process": "The Gene's product participates in the Biological Process (or its subterms) according to Gene Ontology Annotations",
+    "Gene–participates–Cellular Component": "The Gene's product participates in the Cellular Component (or its subterms) according to Gene Ontology Annotations",
+    "Gene–participates–Molecular Function": "The Gene's product participates in the Molecular Function (or its subterms) according to Gene Ontology Annotations",
+    "Gene–participates–Pathway": "The Gene participates in the Pathway, according WikiPathways, Reactome, or Pathway Interaction Database",
+    "Gene→regulates→Gene": "Knockdown or over-expression of the source Gene significantly dysregulated the target Gene according to a consensus signature from LINCS L1000 genetic interference screens",
+    "Pharmacologic Class–includes–Compound": "The Compound belongs to the Pharmacologic Class according to DrugCentral"
+  },
+  "properties": {
+    "common": {
+      "license": "The license governing usage of the information as per its source database"
+    },
+    "nodes": {
+      "name": "The name of the node",
+      "metanode": "The type of the node",
+      "identifier": "The identifier for accessing the node from its particular source",
+      "source": "The database from which the node and its properties were gathered",
+      "description": "Additional information about the node",
+      "class_type": "The FDA class type of the pharmacologic class",
+      "chromosome": "Which chromosome the gene is on",
+      "inchi": "The IUPAC International Chemical Identifier (InChI) for the compound",
+      "inchikey": "A condensed representation of the InChI",
+      "bto_id": "The BRENDA Tissue Ontology (BTO) identifier for the node",
+      "mesh_id": "The Medical Subject Headings (MeSH) identifier for the node"
+    },
+    "edges": {
+      "source": "The database from which the edge and its properties were gathered"
+    }
+  }
+}
