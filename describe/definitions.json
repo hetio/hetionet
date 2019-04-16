@@ -2,8 +2,8 @@
   "metanodes": {
     "Gene": "Protein-coding human genes from Entrez Gene",
     "Compound": "Approved small molecule compounds with documented chemical structures from DrugBank",
-    "Anatomy": "Anatomical structures from Uberon. Excludes structures that are known not to be found in humans.",
-    "Disease": "Complex diseases from the Disease Ontology. Selected to be distinct and specific enough to be clinically relevant yet general enough to be well annotated.",
+    "Anatomy": "Anatomical structures. Excludes structures that are known not to be found in humans. From Uberon",
+    "Disease": "Complex diseases, selected to be distinct and specific enough to be clinically relevant yet general enough to be well annotated. From Disease Ontology",
     "Symptom": "Signs and Symptoms (i.e. clinical abnormalities that can indicate a medical condition) from the MeSH Ontology",
     "Side Effect": "Adverse drug reactions from SIDER/UMLS",
     "Biological Process": "Larger processes or biological programs accomplished by multiple molecular activities. From Gene Ontology.",
