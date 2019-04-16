@@ -1,46 +1,46 @@
 {
   "Gene": {
-    "fillColor": "#0096ff",
-    "textColor": "#ffffff"
+    "fill_color": "#0096ff",
+    "text_color": "#ffffff"
   },
   "Compound": {
-    "fillColor": "#ff2600",
-    "textColor": "#ffffff"
+    "fill_color": "#ff2600",
+    "text_color": "#ffffff"
   },
   "Anatomy": {
-    "fillColor": "#008f00",
-    "textColor": "#ffffff"
+    "fill_color": "#008f00",
+    "text_color": "#ffffff"
   },
   "Disease": {
-    "fillColor": "#8e4f00",
-    "textColor": "#ffffff"
+    "fill_color": "#8e4f00",
+    "text_color": "#ffffff"
   },
   "Symptom": {
-    "fillColor": "#a5abb6",
-    "textColor": "#ffffff"
+    "fill_color": "#a5abb6",
+    "text_color": "#ffffff"
   },
   "Side Effect": {
-    "fillColor": "#fffb00",
-    "textColor": "#000000"
+    "fill_color": "#fffb00",
+    "text_color": "#000000"
   },
   "Biological Process": {
-    "fillColor": "#ff9300",
-    "textColor": "#000000"
+    "fill_color": "#ff9300",
+    "text_color": "#000000"
   },
   "Cellular Component": {
-    "fillColor": "#ff9300",
-    "textColor": "#000000"
+    "fill_color": "#ff9300",
+    "text_color": "#000000"
   },
   "Molecular Function": {
-    "fillColor": "#ff9300",
-    "textColor": "#000000"
+    "fill_color": "#ff9300",
+    "text_color": "#000000"
   },
   "Pathway": {
-    "fillColor": "#ff9300",
-    "textColor": "#000000"
+    "fill_color": "#ff9300",
+    "text_color": "#000000"
   },
   "Pharmacologic Class": {
-    "fillColor": "#ff85ff",
-    "textColor": "#ffffff"
+    "fill_color": "#ff85ff",
+    "text_color": "#ffffff"
   }
 }
