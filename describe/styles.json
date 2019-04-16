@@ -1,0 +1,46 @@
+{
+  "Gene": {
+    fillColor: "#0096ff",
+    textColor: "#ffffff"
+  },
+  "Compound": {
+    fillColor: "#ff2600",
+    textColor: "#ffffff"
+  },
+  "Anatomy": {
+    fillColor: "#008f00",
+    textColor: "#ffffff"
+  },
+  "Disease": {
+    fillColor: "#8e4f00",
+    textColor: "#ffffff"
+  },
+  "Symptom": {
+    fillColor: "#a5abb6",
+    textColor: "#ffffff"
+  },
+  "Side Effect": {
+    fillColor: "#fffb00",
+    textColor: "#000000"
+  },
+  "Biological Process": {
+    fillColor: "#ff9300",
+    textColor: "#000000"
+  },
+  "Cellular Component": {
+    fillColor: "#ff9300",
+    textColor: "#000000"
+  },
+  "Molecular Function": {
+    fillColor: "#ff9300",
+    textColor: "#000000"
+  },
+  "Pathway": {
+    fillColor: "#ff9300",
+    textColor: "#000000"
+  },
+  "Pharmacologic Class": {
+    fillColor: "#ff85ff",
+    textColor: "#ffffff"
+  }
+}
