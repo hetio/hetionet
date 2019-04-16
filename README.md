@@ -44,6 +44,7 @@ Otherwise, git will checkout text pointers for large files rather than the large
 See [`describe/nodes/metanodes.tsv`](describe/nodes/metanodes.tsv) for details on the node types in the hetnet.
 See [`describe/edges/metaedges.tsv`](describe/edges/metaedges.tsv) for details on the edge types.
 See [`describe/definitions.json`](describe/definitions.json) for definitions of metanodes, metaedges, and node/edge properties.
+See [`describe/styles.json`](describe/styles.json) for the standard colors to be used for displaying metanodes.
 
 Below, we provide two hetnet visualizations. Panel A shows the metagraph (graph of types) for Hetionet. Panel B shows the actual hetnet with nodes laid out in circles by type. Color denotes edge type.
 
