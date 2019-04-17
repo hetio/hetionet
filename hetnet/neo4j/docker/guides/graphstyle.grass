@@ -1,95 +1,63 @@
 node {
   diameter: 50px;
-  color: #A5ABB6;
-  border-color: #9AA1AC;
-  border-width: 1px;
-  text-color-internal: #FFFFFF;
-  font-size: 10px;
+  color: #424242;
+  text-color-external: #424242;
+  text-color-internal: #fafafa;
+  font-size: 8px;
+  caption: '{name}';
 }
 
 relationship {
-  color: #A5ABB6;
-  shaft-width: 1.5px;
+  color: #424242;
+  text-color-external: #424242;
+  text-color-internal: #fafafa;
   font-size: 8px;
-  padding: 3px;
-  text-color-external: #000000;
-  text-color-internal: #FFFFFF;
+  shaft-width: 2px;
+  padding: 1px;
   caption: '<type>';
 }
 
 node.Gene {
-  color: #0096FF;
-  border-color: #FFFFFF;
-  text-color-internal: #FFFFFF;
-  caption: '{name}';
+  color: #02b3e4;
 }
 
 node.Pathway {
-  color: #FF9300;
-  border-color: #FFFFFF;
-  text-color-internal: #000000;
-  caption: '{name}';
+  color: #fa750f;
 }
 
 node.Anatomy {
-  color: #008F00;
-  border-color: #FFFFFF;
-  text-color-internal: #FFFFFF;
-  caption: '{name}';
+  color: #4caf50;
 }
 
 node.Disease {
-  color: #8E4F00;
-  border-color: #FFFFFF;
-  text-color-internal: #FFFFFF;
-  caption: '{name}';
+  color: #875442;
 }
 
 node.Compound {
-  color: #FF2600;
-  border-color: #FFFFFF;
-  text-color-internal: #FFFFFF;
-  caption: '{name}';
+  color: #e91e63;
 }
 
 node.CellularComponent {
-  color: #FF9300;
-  border-color: #FFFFFF;
-  text-color-internal: #000000;
-  caption: '{name}';
+  color: #fa750f;
 }
 
 node.BiologicalProcess {
-  color: #FF9300;
-  border-color: #FFFFFF;
-  text-color-internal: #000000;
-  caption: '{name}';
+  color: #fa750f;
 }
 
 node.SideEffect {
-  color: #FFFB00;
-  border-color: #FFFFFF;
-  text-color-internal: #000000;
-  caption: '{name}';
+  color: #ffeb3b;
+  text-color-external: #424242;
 }
 
 node.Symptom {
-  color: #A5ABB6;
-  border-color: #FFFFFF;
-  text-color-internal: #FFFFFF;
-  caption: '{name}';
+  color: #607d8b;
 }
 
 node.PharmacologicClass {
-  color: #FF85FF;
-  border-color: #FFFFFF;
-  text-color-internal: #FFFFFF;
-  caption: '{name}';
+  color: #c341d8;
 }
 
 node.MolecularFunction {
-  color: #FF9300;
-  border-color: #FFFFFF;
-  text-color-internal: #000000;
-  caption: '{name}';
+  color: #fa750f;
 }
