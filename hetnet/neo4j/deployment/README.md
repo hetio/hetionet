@@ -28,7 +28,7 @@ Here is a summary of what this script does:
 
 Reboot the deployment box at the end to ensure that new configurations will become effective.
 
-If you need to reconfigure SSL later, please reset `EMAIL` and `SSL_DOMAIN` as described earlier, then type this command:
+If you need to reconfigure SSL later, please reset `EMAIL` and `SSL_DOMAIN` as described earlier, then type:
 ```shell
 ./install_ssl.sh
 ```
