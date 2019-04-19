@@ -33,7 +33,7 @@ cp --dereference /etc/letsencrypt/live/$SSL_DOMAIN/privkey.pem   /home/ubuntu/ss
 
 # If hetionet-container is running now, restart it to make the new certificates effective.
 if [ \`docker ps --quiet --filter name=hetionet-container\` ]; then
-    docker restart hetionet-container
+    echo -n "Restarting "; docker restart hetionet-container
 fi
 EOF
 
