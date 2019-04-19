@@ -30,21 +30,20 @@ sudo bash -c "echo neo4j-hetionet > /etc/hostname"
 
 # Install the latest Docker CE (Community Edition)
 sudo apt install apt-transport-https gnupg-agent --yes
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl --fail --silent --show-error --location \
+     https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
      "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io --yes
-sudo usermod -aG docker ubuntu   # ensure that "ubuntu" account can run docker w/o "sudo"
+
+# Allow "ubuntu" to run docker w/o "sudo"
+sudo usermod --append --groups docker ubuntu
 
 # Collect docker-related scripts into one directory
 mkdir -p ~/docker-scripts/
-cp -f start-docker.sh stop-docker.sh update-docker.sh neo4j-supervisor.sh ~/docker-scripts/
-
-# Use supervisord to start neo4j-hetionet container at boot time
-sudo apt install supervisor --yes
-sudo systemctl stop supervisor
-sudo cp -f neo4j-docker.conf /etc/supervisor/conf.d/
+cp -f run-docker.sh stop-docker.sh update-docker.sh ~/docker-scripts/
+chmod +x ~/docker-scripts/*.sh
 
 # Install SSL certificates issued by Let's Encrypt
 bash ./install_ssl.sh

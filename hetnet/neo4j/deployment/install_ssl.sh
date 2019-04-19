@@ -28,7 +28,7 @@ echo "#!/bin/bash" >> ./sync-neo4j-ssl.sh
 echo "# Certbot post-renewal-hook script that synchronizes SSL certificates for neo4j" \
      >> ./sync-neo4j-ssl.sh
 echo ./sync-neo4j-ssl.sh
-echo "# Use `cp --dereference` to emphasize that we are copying the actual files." \
+echo "# Use 'cp --dereference' to emphasize that we are copying the actual files." \
      >> ./sync-neo4j-ssl.sh
 SSL_DIR=/etc/letsencrypt/live/$SSL_DOMAIN
 echo "cp --dereference $SSL_DIR/fullchain.pem /home/ubuntu/ssl/neo4j.cert" >> ./sync-neo4j-ssl.sh
