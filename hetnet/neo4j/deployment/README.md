@@ -30,7 +30,7 @@ Reboot the deployment box to ensure that new configurations will become effectiv
 cd ~/docker-scripts/
 ./run-docker.sh
 ```
-Wait for a few minutes before the web server is up because it has to initialize the databases and guides.
+Wait for a few minutes before the web server is up, because the server needs to initialize the databases and guides.
 
 To reconfigure SSL later, please reset `EMAIL` and `SSL_DOMAIN` as described earlier, then type:
 ```shell
