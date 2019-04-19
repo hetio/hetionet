@@ -11,8 +11,8 @@ if [ ! -x /usr/bin/certbot ]; then
     sudo apt install certbot --yes
 fi
 
-EMAIL="foo@bar.org"                 # set email address associated with SSL certificate
-SSL_DOMAIN="dhu-foo.greenelab.com"  # set your SSL domain name
+EMAIL="team@greenelab.com" # email address associated with SSL certificate
+SSL_DOMAIN="neo4j.het.io"  # SSL domain name
 
 sudo certbot certonly \
      --standalone \
