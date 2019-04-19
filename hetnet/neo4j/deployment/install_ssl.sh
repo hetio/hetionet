@@ -22,9 +22,8 @@ sudo certbot certonly \
      --no-eff-email \
      --domain $SSL_DOMAIN
 
-# Create "sync-neo4j-ssl.sh" dynamically based on $SSL_DOMAIN and run it:
-echo
-cat << EOF | tee ./sync-neo4j-ssl.sh
+# Create "sync-neo4j-ssl.sh" dynamically and run it:
+cat > ./sync-neo4j-ssl.sh << EOF
 #!/bin/bash
 # Certbot post-renewal-hook script that synchronizes SSL certificates for neo4j
 
@@ -32,12 +31,11 @@ cat << EOF | tee ./sync-neo4j-ssl.sh
 cp --dereference /etc/letsencrypt/live/$SSL_DOMAIN/fullchain.pem /home/ubuntu/ssl/neo4j.cert
 cp --dereference /etc/letsencrypt/live/$SSL_DOMAIN/privkey.pem   /home/ubuntu/ssl/neo4j.key
 
-# If hetionet-container is running now, restart it to make the renewal effective.
+# If hetionet-container is running now, restart it to make the new certificates effective.
 if [ \`docker ps --quiet --filter name=hetionet-container\` ]; then
     docker restart hetionet-container
 fi
 EOF
-echo
 
 mkdir -p /home/ubuntu/ssl/
 chmod +x ./sync-neo4j-ssl.sh
