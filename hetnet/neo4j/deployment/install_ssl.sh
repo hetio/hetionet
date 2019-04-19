@@ -40,5 +40,5 @@ sudo ./sync-neo4j-ssl.sh
 
 # Add post-renewal-hook, see:
 # https://certbot.eff.org/docs/using.html#renewing-certificates
-echo "/home/ubuntu/docker-scripts/update-docker.sh" >> ./sync-neo4j-ssl.sh
+echo "docker restart hetionet-container" >> ./sync-neo4j-ssl.sh
 sudo cp -f ./sync-neo4j-ssl.sh /etc/letsencrypt/renewal-hooks/post/
