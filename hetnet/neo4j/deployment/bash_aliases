@@ -1,0 +1,7 @@
+############################################
+#     greenelab bash aliases
+############################################
+alias cls='clear'
+alias cp='cp -i'
+alias rm='rm -i'
+alias mv='mv -i'

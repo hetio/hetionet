@@ -1,0 +1,9 @@
+
+#######################################################
+#     greenelab root bashrc customization
+#######################################################
+
+# bash prompt
+TITLEBAR="\[\e]0;\u@\h: \w\a\]"
+PROMPT="\[\033[0;31m\][\u@\h: \w]#\[\033[0m\] "
+export PS1="$TITLEBAR$PROMPT"

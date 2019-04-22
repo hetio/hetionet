@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Upgrade packages and reboot the system if required.
+apt update
+DEBIAN_FRONTEND=noninteractive apt full-upgrade --yes
+apt autoremove --yes
+
+if [ -f /var/run/reboot-required ]; then
+    /sbin/reboot
+fi
