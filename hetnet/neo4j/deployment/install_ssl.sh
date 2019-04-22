@@ -28,8 +28,8 @@ cat > ./sync-neo4j-ssl.sh << EOF
 # Certbot post-renewal-hook script that synchronizes SSL certificates for neo4j
 
 # Use 'cp --dereference' to emphasize that we are copying the actual files.
-cp --dereference /etc/letsencrypt/live/$SSL_DOMAIN/fullchain.pem /home/ubuntu/ssl/neo4j.cert
-cp --dereference /etc/letsencrypt/live/$SSL_DOMAIN/privkey.pem   /home/ubuntu/ssl/neo4j.key
+cp --dereference --force /etc/letsencrypt/live/$SSL_DOMAIN/fullchain.pem /home/ubuntu/ssl/neo4j.cert
+cp --dereference --force /etc/letsencrypt/live/$SSL_DOMAIN/privkey.pem   /home/ubuntu/ssl/neo4j.key
 
 # If hetionet-container is running now, restart it to make the new certificates effective.
 if [ \`docker ps --quiet --filter name=hetionet-container\` ]; then
@@ -43,4 +43,4 @@ sudo ./sync-neo4j-ssl.sh
 
 # Add post-renewal-hook, see:
 # https://certbot.eff.org/docs/using.html#renewing-certificates
-sudo cp -f ./sync-neo4j-ssl.sh /etc/letsencrypt/renewal-hooks/post/
+sudo cp --force ./sync-neo4j-ssl.sh /etc/letsencrypt/renewal-hooks/deploy/
