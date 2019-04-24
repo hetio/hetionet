@@ -12,8 +12,8 @@ fi
 cd `dirname $0`
 
 # Update packages automatically using a daily cron job
-sudo apt-get update
-sudo apt-get purge unattended-upgrades --yes
+sudo apt update
+sudo apt purge unattended-upgrades --yes
 sudo rm -rf /var/log/unattended-upgrades/
 sudo cp upgrade-pkg /etc/cron.daily/
 sudo chmod 755 /etc/cron.daily/upgrade-pkg
@@ -29,13 +29,13 @@ cp -f bash_aliases ~/.bash_aliases
 sudo bash -c "echo neo4j-hetionet > /etc/hostname"
 
 # Install the latest Docker CE (Community Edition)
-sudo apt-get install apt-transport-https gnupg-agent --yes
+sudo apt install apt-transport-https gnupg-agent --yes
 curl --fail --silent --show-error --location \
      https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
      "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io --yes
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io --yes
 
 # Allow "ubuntu" to run docker w/o "sudo"
 sudo usermod --append --groups docker ubuntu
