@@ -7,8 +7,8 @@ cd `dirname $0`
 
 if [ ! -x /usr/bin/certbot ]; then
     sudo add-apt-repository ppa:certbot/certbot --yes
-    sudo apt update
-    sudo apt install certbot --yes
+    sudo apt-get update
+    sudo apt-get install certbot --yes
 fi
 
 EMAIL="team@greenelab.com" # email address associated with SSL certificate

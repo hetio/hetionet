@@ -20,7 +20,7 @@ Then type the following command on the deplyment box:
 ```
 
 Here is a summary of what this script does:
- - Install a daily cron job to upgrade packages using `apt` command
+ - Install a daily cron job to upgrade packages using `apt-get` command
  - Install the latest Docker CE (Community Edition)
  - Copy docker-related scripts into `/home/ubuntu/docker-scripts/` directory
  - Install SSL certificates issed by [Let's Encrypt](https://letsencrypt.org/)
