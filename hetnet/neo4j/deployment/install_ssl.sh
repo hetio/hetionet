@@ -35,12 +35,14 @@ EOF
 mkdir -p /home/ubuntu/ssl/
 chmod +x ./sync-neo4j-ssl.sh
 sudo ./sync-neo4j-ssl.sh
+
+# If hetionet-container is running now, restart it to make the new certificates effective.
 if [ -n $(docker ps --quiet --filter name=hetionet-container) ]; then
     echo -n "Restarting "
     docker restart hetionet-container
 fi
 
-# Add renewal-hooks, see:
+# Add renewal-hooks scripts, see:
 # https://certbot.eff.org/docs/using.html#renewing-certificates
 sudo cp --force ./stop-neo4j.sh /etc/letsencrypt/renewal-hooks/pre/
 sudo cp --force ./sync-neo4j-ssl.sh /etc/letsencrypt/renewal-hooks/deploy/
