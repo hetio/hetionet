@@ -26,7 +26,7 @@ sudo certbot certonly \
 cat > ./sync-neo4j-ssl.sh << EOF
 #!/bin/bash
 # Certbot deploy-renewal-hook script, which synchronizes SSL certificates for neo4j.
-# This script will be executed ONLY WHEN certificate is renrewed successfully.
+# This script will be executed ONLY WHEN certificate is renewed successfully.
 
 # Use 'cp --dereference' to emphasize that we are copying the actual files.
 cp --dereference --force /etc/letsencrypt/live/$SSL_DOMAIN/fullchain.pem /home/ubuntu/ssl/neo4j.cert
