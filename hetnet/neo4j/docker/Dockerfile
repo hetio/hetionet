@@ -1,4 +1,4 @@
-FROM neo4j:3.2.8-enterprise
+FROM neo4j:3.5.12
 MAINTAINER Daniel Himmelstein, <daniel.himmelstein@gmail.com>
 
 COPY scripts /
@@ -10,7 +10,7 @@ COPY files/neo4j-guide-extension-3.2.3.jar /var/lib/neo4j/plugins
 COPY guides /guides
 
 # Update or install packages
-RUN apk add --no-cache --quiet \
+RUN apt-get update && apt-get install --yes \
   bzip2 \
   curl \
   tar \
@@ -21,8 +21,9 @@ RUN apk add --no-cache --quiet \
 #  https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.0.4.1/apoc-3.0.4.1-all.jar
 
 # Update the Neo4j Browser source to improve search results and add Piwik Analytics
+# FIXME: title/description substitution does not currently seem to work
 RUN cd /var/lib/neo4j/lib && \
-  JAR_PATH=`ls neo4j-browser-*` && \
+  JAR_PATH=$(ls neo4j-browser-*) && \
   HTML_PATH=browser/index.html && \
   unzip $JAR_PATH $HTML_PATH && \
   OLD='<title>Neo4j Browser</title>' && \
