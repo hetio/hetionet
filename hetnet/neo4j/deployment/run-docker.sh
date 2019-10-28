@@ -14,5 +14,5 @@ docker run \
   --volume=/home/ubuntu/neo4j-logs:/logs \
   --volume=/home/ubuntu/ssl:/ssl \
   --env=NEO4J_dbms_memory_pagecache_size=1g \
-  --env=NEO4J_dbms_memory_heap_maxSize=2g \
+  --env=NEO4J_dbms_memory_heap_max__size=2g \
   dhimmel/hetionet

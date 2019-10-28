@@ -31,6 +31,8 @@ cat > ./sync-neo4j-ssl.sh << EOF
 # Use 'cp --dereference' to emphasize that we are copying the actual files.
 cp --dereference --force /etc/letsencrypt/live/$SSL_DOMAIN/fullchain.pem /home/ubuntu/ssl/neo4j.cert
 cp --dereference --force /etc/letsencrypt/live/$SSL_DOMAIN/privkey.pem   /home/ubuntu/ssl/neo4j.key
+# neo4j docker users neo4j user with id 101 and must be able to read neo4j.key. See https://github.com/hetio/hetionet/pull/26#issuecomment-547090526
+chmod 644 /home/ubuntu/ssl/neo4j.key
 EOF
 
 mkdir -p /home/ubuntu/ssl/
