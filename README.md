@@ -28,6 +28,17 @@ However, if you would like to access Hetionet without Neo4j, then we suggest the
 The matrix format refers to HetMat archives, which store edge adjacency matrices on disk.
 Additional usage information is available at the corresponding download locations.
 
+## Derivative Networks
+
+This section contains networks that are derived, at least in part from Hetionet, but are not identical.
+
+- **BEL**:
+  see [`pybel/hetionet-bel`](https://github.com/pybel/hetionet-bel) for Hetionet converted to [Biological Expression Language](https://openbel.org/language/version_2.0/bel_specification_version_2.0.html) (BEL).
+  BEL expresses biological relationships in a machine-readable format.
+  Changes or omission of certain nodes and edges were made to properly represent Hetionet in BEL, as documented in the `hetionet-bel` README.
+  Currently, the repository contains exports of the BEL representation in multiple formats: as a BEL Script, as Nodelink JSON, and as GraphDati JSON.
+  Contributed by [Charles Tapley Hoyt](https://github.com/cthoyt).
+
 ### Permuted Hetnets
 
 We've created five permuted derivatives of Hetionet. The [permutation](https://doi.org/10.15363/thinklab.d136 "Permuting hetnets and implementing randomized edge swaps in cypher · Thinklab discussion") randomizes edges while preserving node degree. Permuted hetnets are available in [`hetnet/permuted`](hetnet/permuted) in JSON and Neo4j 2.3 formats. Relationship properties are omitted from the permuted hetnets.
