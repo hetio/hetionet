@@ -11,7 +11,7 @@ The contents of this repository are mostly included in the Docker image. However
 Build the image using the following command:
 
 ```sh
-TAG="dhimmel/hetionet:hetionet-v1.0_neo4j-3.5.12"
+TAG="dhimmel/hetionet:hetionet-v1.0_neo4j-4.0.6"
 docker build --tag dhimmel/hetionet:latest --tag $TAG --file Dockerfile .
 ```
 
