@@ -45,5 +45,8 @@ mkdir -p ~/docker-scripts/
 cp -f run-docker.sh stop-docker.sh update-docker.sh ~/docker-scripts/
 chmod +x ~/docker-scripts/*.sh
 
+# Create data and log directories, which will be populated by docker container.
+mkdir ~/hetionet-data ~/neo4j-logs
+
 # Install SSL certificates issued by Let's Encrypt
 bash ./install_ssl.sh

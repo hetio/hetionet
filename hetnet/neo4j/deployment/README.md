@@ -36,7 +36,9 @@ cd ~/docker-scripts/
 ./run-docker.sh
 ```
 
-Wait for a few minutes before the web server is up, because the server needs to initialize the databases and guides.
+Wait for ~15 minutes before the web server is up, because the server needs to initialize the databases and guides.
+
+Please also make sure that your firewall setup on deployment box allows inbound traffic to port **7687**.
 
 To reconfigure SSL later, please reset `EMAIL` and `SSL_DOMAIN` as described earlier, then type:
 
