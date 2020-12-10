@@ -26,12 +26,14 @@ sudo certbot certonly \
 cat > ./sync-neo4j-ssl.sh << EOF
 #!/bin/bash
 # Certbot deploy-renewal-hook script, which synchronizes SSL certificates for neo4j.
-# This script will be executed ONLY WHEN certificate is renewed successfully.
+# This script will be executed ONLY WHEN SSL certificate has been renewed successfully.
 
 # Use 'cp --dereference' to emphasize that we are copying the actual files.
 cp --dereference --force /etc/letsencrypt/live/$SSL_DOMAIN/fullchain.pem /home/ubuntu/ssl/neo4j.cert
 cp --dereference --force /etc/letsencrypt/live/$SSL_DOMAIN/privkey.pem   /home/ubuntu/ssl/neo4j.key
-# neo4j docker users neo4j user with id 101 and must be able to read neo4j.key. See https://github.com/hetio/hetionet/pull/26#issuecomment-547090526
+
+# Docker container "hetionet-container" uses "neo4j" account (uid 101), who needs to read "neo4j.key".
+# See https://github.com/hetio/hetionet/pull/26#issuecomment-547090526
 chmod 644 /home/ubuntu/ssl/neo4j.key
 EOF
 
@@ -40,7 +42,7 @@ chmod +x ./sync-neo4j-ssl.sh
 sudo ./sync-neo4j-ssl.sh
 
 # If hetionet-container is running now, restart it to make the new certificates effective.
-if [ -n $(docker ps --quiet --filter name=hetionet-container) ]; then
+if [ -n "$(docker ps --quiet --filter name=hetionet-container)" ]; then
     echo -n "Restarting "
     docker restart hetionet-container
 fi
