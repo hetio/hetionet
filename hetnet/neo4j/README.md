@@ -2,6 +2,8 @@
 
 `hetionet-v1.0.db.tar.bz2` is a bzip2-compressed tarball of a Neo4j database. The database has been migrated to the Neo4j 3.0.1 Community Edition.
 
+`hetionet-v1.0-neo4j.dump` is a neo4j database dump [created with](https://github.com/hetio/hetionet/issues/43#issuecomment-1179821443) `neo4j-admin dump`.
+
 ## Nomenclature
 
 The Neo4j graph uses slightly different names for metanodes (Neo4j labels) and metaedges (Neo4j relationship types).
