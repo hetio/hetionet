@@ -10,7 +10,7 @@ The Neo4j graph uses slightly different names for metanodes (Neo4j labels) and m
 See [`labels.tsv`](labels.tsv) for the node type mapping and [`types.tsv`](types.tsv) for the edge type mapping.
 We conform to the Neo4j style of CamelCase labels and ALL_CAPS relationship types.
 In addition, Neo4j relationship types are appended with metaedge standard abbreviations.
-This adds source/target metanode awareness to relationship types and [enables](https://thinklab.com/discussion/using-the-neo4j-graph-database-for-hetnets/112#6 "Query Optimization · Using the neo4j graph database for hetnets · Thinklab Discussion in Project Rephetio") optimized queries.
+This adds source/target metanode awareness to relationship types and [enables](https://think-lab.github.io/d/112/#6 "Query Optimization · Using the neo4j graph database for hetnets · Thinklab Discussion in Project Rephetio") optimized queries.
 
 ## Neo4j setup instructions
 
