@@ -37,6 +37,32 @@ docker run \
   dhimmel/hetionet
 ```
 
+## DELETE
+
+```
+TAG="dhimmel/hetionet:hetionet-v1.0_neo4j-4.0.6"
+docker build --tag $TAG --file Dockerfile .
+```
+
+```sh
+docker run \
+  --name=hetionet-container \
+  --rm \
+  --publish=7474:7474 \
+  --publish=7687:7687 \
+  --volume=$HOME/neo4j/hetionet-data:/data \
+  --volume=$HOME/neo4j/hetionet-logs:/logs \
+  --interactive --tty \
+  dhimmel/hetionet:hetionet-v1.0_neo4j-4.0.6 bash
+```
+
+```
+DB_URL="https://github.com/hetio/hetionet/raw/030e44430f168d934c44860ad5a9512deb7c7175/hetnet/neo4j/hetionet-v1.0-neo4j.dump"
+neo4j-admin load --from=data/hetionet-v1.0-neo4j.dump --database=hetionet
+
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.dbms.database.DefaultSystemGraphInitializer@6b760460' was successfully initialized, but failed to start. Please see the attached cause exception "Unknown store version 'AF4.3.0'".
+```
+
 ## Deploying the docker
 
 From the cloud host, first pull the docker `docker pull dhimmel/hetionet` and then start the docker `sh ~/run-docker.sh`. `run-docker.sh` should be copied from [`host/run-docker.sh`](host/run-docker.sh) in this repository into $HOME on the cloud host.
