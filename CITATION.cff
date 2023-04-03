@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+title: >-
+  hetio/hetionet:
+  Data repository containing Hetionet downloads
+message: >-
+  This citation is for the Hetionet data repository,
+  which provides Hetionet in several formats including
+  JSON, HetMatPy (matrix), Neo4j database, and TSV (tabular).
+  For general citation of Hetionet v1.0, please cite Project Rephetio,
+  the study that introduced Hetionet at <https://doi.org/10.7554/elife.26726>.
+type: dataset
+authors:
+  - given-names: Daniel
+    family-names: Himmelstein
+    orcid: 'https://orcid.org/0000-0002-3012-7446'
+  - given-names: Antoine
+    family-names: Lizee
+    orcid: 'https://orcid.org/0000-0002-1073-3190'
+  - given-names: Faisal
+    family-names: Alquaddoomi
+    orcid: 'https://orcid.org/0000-0003-4297-8747'
+  - given-names: Vincent
+    family-names: Rubinetti
+    orcid: 'https://orcid.org/0000-0002-4655-3773'
+  - given-names: Dongbo
+    family-names: Hu
+    orcid: 'https://orcid.org/0000-0001-7870-8242'
+  - given-names: Casey
+    family-names: Greene
+    orcid: 'https://orcid.org/0000-0001-8713-9213'
+  - given-names: Sergio
+    family-names: Baranzini
+    orcid: 'https://orcid.org/0000-0003-0067-194X'
+identifiers:
+  - type: swh
+    value: 'swh:1:dir:7a8ca59f120a90b86c31dc7be975f42ee0b4285e'
+    description: Software Heritage Directory
+  - type: swh
+    value: 'swh:1:rev:af668689a81952058df8b1321cc6c744b93d83e2'
+    description: Software Heritage Revision
+repository-code: 'https://github.com/greenelab/connectivity-search-manuscript'
+url: 'https://het.io/about/'
+repository-artifact: 'https://zenodo.org/record/268568'
+keywords:
+  - neo4j
+  - network
+  - rephetio
+  - hetionet
+  - hetnet
+  - drug-repurposing
+  - data-integration
+license: CC0-1.0
