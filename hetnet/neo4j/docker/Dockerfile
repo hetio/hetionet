@@ -1,20 +1,22 @@
-FROM neo4j:3.5.12
+FROM neo4j:4.0.6
 MAINTAINER Daniel Himmelstein, <daniel.himmelstein@gmail.com>
-
-COPY scripts /
-RUN chmod +x /get_data_run_neo4j.sh
-
-COPY files/neo4j.conf /var/lib/neo4j/conf/
-COPY files/piwik.html /
-COPY files/neo4j-guide-extension-3.2.3.jar /var/lib/neo4j/plugins
-COPY guides /guides
 
 # Update or install packages
 RUN apt-get update && apt-get install --yes \
   bzip2 \
   curl \
   tar \
+  nano \
   zip
+
+COPY scripts /
+RUN chmod +x /get_data_run_neo4j.sh
+
+COPY files/neo4j.conf /var/lib/neo4j/conf/
+COPY files/piwik.html /
+# https://github.com/neo4j-contrib/neo4j-guides
+# COPY files/neo4j-guide-extension-3.2.3.jar /var/lib/neo4j/plugins
+# COPY guides /guides
 
 # Install Neo4j APOC plugin
 # RUN wget --quiet --directory-prefix=/var/lib/neo4j/plugins \
